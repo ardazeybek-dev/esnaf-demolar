@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Esnaf Demo Vitrini — Arda Zeybek</title>
+<meta name="description" content="Kafe, kuaför, diş kliniği ve oto yıkama için hazır demo web siteleri. Telefonda hızlı açılan, WhatsApp'a bağlı, düzenlemesi kolay siteler. Paketler ve fiyatlar.">
+<meta name="theme-color" content="#f5f3ee">
+<meta property="og:title" content="Esnaf Demo Vitrini — Arda Zeybek">
+<meta property="og:description" content="Kafe, kuaför, diş kliniği ve oto yıkama için çalışan demo siteler. Beğendiğinizi seçin, işletmenize uyarlayalım.">
+<meta property="og:image" content="assets/shots/kafe.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141414'/%3E%3Cpath d='M16 46V18h10l6 14 6-14h10v28h-8V32l-6 14h-4l-6-14v14z' fill='%23f5f3ee'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Bricolage";font-weight:200 800;font-display:swap;src:url(assets/fonts/bricolage-grotesque-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Bricolage";font-weight:200 800;font-display:swap;src:url(assets/fonts/bricolage-grotesque-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{--bg:#f5f3ee;--card:#ffffff;--ink:#141414;--soft:#5f5d57;--line:#e2ded4;--acc:#c8411b;
+  --f:"Bricolage",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 12px;border-radius:6px;z-index:50}
+.skip:focus{left:8px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+@media (min-width:900px){.wrap{padding:0 40px}}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0}
+.me{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px;letter-spacing:-.01em}
+.me i{width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:700 15px/1 var(--f);font-style:normal}
+.me small{display:block;font-weight:500;font-size:12px;color:var(--soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 15px/1 var(--f);text-decoration:none;padding:15px 20px;border-radius:12px;min-height:48px;white-space:nowrap;transition:transform .15s,background .15s}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#2c2c2c}
+.btn-line{border:1.5px solid var(--ink)}
+header .btn{padding:11px 14px;min-height:42px;font-size:14px}
+
+.hero{padding:36px 0 52px}
+@media (min-width:900px){.hero{padding:72px 0 80px}}
+.hero .k{display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:13px;color:var(--soft);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+.hero .k b{width:8px;height:8px;border-radius:50%;background:#2fa36b}
+.hero h1{font:700 clamp(40px,9vw,78px)/.98 var(--f);letter-spacing:-.045em;margin-top:20px;max-width:15ch;font-variation-settings:"wdth" 90}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p{font-size:clamp(17px,2.4vw,20px);color:var(--soft);max-width:52ch;margin-top:18px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font-size:14px;color:var(--soft)}
+.facts span::before{content:"✓ ";color:#2fa36b;font-weight:700}
+
+.hero-grid{display:grid;gap:32px}
+@media (min-width:1000px){.hero-grid{grid-template-columns:1.15fr .85fr;align-items:center}}
+.fan{display:none;position:relative;height:520px}
+@media (min-width:1000px){.fan{display:block}}
+.fan img{position:absolute;width:230px;height:auto;border-radius:28px;border:7px solid #141414;box-shadow:0 30px 60px -24px rgba(0,0,0,.45);background:#141414}
+.fan .f1{left:0;top:70px;transform:rotate(-8deg)}
+.fan .f2{left:50%;top:10px;transform:translateX(-50%);z-index:2}
+.fan .f3{right:0;top:80px;transform:rotate(8deg)}
+.sec-t{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:12px;border-top:1px solid var(--ink);padding-top:16px}
+.sec-t h2{font:700 clamp(28px,6vw,48px)/1.05 var(--f);letter-spacing:-.035em}
+.sec-t p{color:var(--soft);max-width:44ch;font-size:15px}
+
+.demos{display:grid;gap:18px;margin-top:26px}
+@media (min-width:800px){.demos{grid-template-columns:1fr 1fr;gap:22px}}
+.demo{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.stage{position:relative;height:300px;overflow:hidden;display:flex;justify-content:center;align-items:flex-end}
+@media (min-width:1100px){.stage{height:340px}}
+.stage .ph{width:220px;border-radius:26px 26px 0 0;border:7px solid #141414;border-bottom:0;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);transform:translateY(24px);transition:transform .35s ease;background:#141414}
+.stage .ph img{display:block;width:100%;height:auto}
+.stage .dk{position:absolute;left:-40px;bottom:-30px;width:62%;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(0,0,0,.4);opacity:.95;transform:rotate(-4deg)}
+.stage .dk img{display:block;width:100%;height:auto}
+.demo:hover .ph{transform:translateY(8px)}
+.s-kuafor .ph{border-color:#4a413a;background:#4a413a}.s-oto .ph{border-color:#141414}
+.s-kafe{background:#efe4d1}.s-kuafor{background:#1b1816}.s-klinik{background:#dcefeb}.s-oto{background:#ffd400}
+.stage .sector{position:absolute;top:16px;left:16px;font:700 12px/1 var(--f);letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.9);padding:7px 10px;border-radius:999px;z-index:2}
+.body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.body h3{font:700 24px/1.15 var(--f);letter-spacing:-.025em}
+.body h3 small{display:block;font-size:14px;font-weight:500;color:var(--soft);letter-spacing:0;margin-top:3px}
+.body ul{list-style:none;display:grid;gap:7px;font-size:15px}
+.body li{display:flex;gap:10px}
+.body li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--acc);margin-top:9px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+.links .btn{padding:13px 16px;min-height:46px;font-size:14px}
+.fit{font-size:13px;color:var(--soft);border-top:1px dashed var(--line);padding-top:12px}
+
+.pricing{padding:72px 0 0}
+.plans{display:grid;gap:16px;margin-top:26px}
+@media (min-width:900px){.plans{grid-template-columns:repeat(3,1fr);gap:20px}}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:14px}
+.plan.pop{background:var(--ink);color:#f2f0ea;border-color:var(--ink)}
+.plan .nm{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:18px}
+.plan .nm span{font-size:12px;font-weight:700;background:var(--acc);color:#fff;padding:5px 9px;border-radius:999px}
+.plan .pr{font:700 52px/1 var(--f);letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.plan .pr small{font-size:22px;margin-right:2px}
+.plan .pr i{font-style:normal;font-size:15px;font-weight:500;color:var(--soft);letter-spacing:0;margin-left:6px}
+.plan.pop .pr i,.plan.pop .for{color:#b7b4ac}
+.plan .for{font-size:14px;color:var(--soft)}
+.plan ul{list-style:none;display:grid;gap:9px;font-size:15px;border-top:1px solid var(--line);padding-top:16px}
+.plan.pop ul{border-color:#333}
+.plan li{display:flex;gap:10px}
+.plan li::before{content:"✓";font-weight:700;color:#2fa36b}
+.plan li.no{color:var(--soft)}
+.plan.pop li.no{color:#8f8c85}
+.plan li.no::before{content:"–";color:var(--soft)}
+.costs{margin-top:18px;display:grid;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 22px;font-size:15px}
+@media (min-width:900px){.costs{grid-template-columns:repeat(3,1fr)}}
+.costs b{display:block;font-size:15px}
+.costs span{color:var(--soft);font-size:14px}
+
+.how{padding:72px 0 0}
+.steps{list-style:none;display:grid;gap:14px;margin-top:26px;counter-reset:s}
+@media (min-width:900px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;margin-bottom:12px}
+.steps b{display:block;font-size:18px;letter-spacing:-.01em}
+.steps span{color:var(--soft);font-size:15px}
+
+.faq{padding:72px 0 0}
+.faq details{border-bottom:1px solid var(--line);max-width:820px}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding-bottom:18px;color:var(--soft);max-width:66ch}
+
+.end{margin:72px 0 0;background:var(--ink);color:#f2f0ea;border-radius:28px;padding:36px 24px;display:grid;gap:20px}
+@media (min-width:900px){.end{grid-template-columns:1.4fr .6fr;align-items:center;padding:56px}}
+.end h2{font:700 clamp(28px,5vw,44px)/1.08 var(--f);letter-spacing:-.035em}
+.end p{color:#b7b4ac;margin-top:10px}
+.end .btn{background:#fff;color:var(--ink)}
+footer{padding:28px 0 36px;font-size:13px;color:var(--soft);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+</style>
+</head>
+<body>
+<a class="skip" href="#demolar">Demolara geç</a>
+<div class="wrap">
+  <header>
+    <a class="me" href="#"><i aria-hidden="true">AZ</i><span>Arda Zeybek<small>Esnaf için web siteleri</small></span></a>
+    <a class="btn btn-ink" href="https://bionluk.com/ardazeybek_" target="_blank" rel="noopener">Bionluk'tan yaz</a>
+  </header>
+
+  <section class="hero hero-grid" aria-labelledby="h1"><div>
+    <span class="k"><b aria-hidden="true"></b>4 çalışan demo · telefondan açıp deneyin</span>
+    <h1 id="h1">Müşteriniz sizi telefondan arıyor. <em>Karşısına ne çıkıyor?</em></h1>
+    <p>Aşağıdaki dört site gerçek bir esnaf sitesinin nasıl çalışacağını gösteriyor: QR menü, WhatsApp'tan randevu, fiyat tablosu, önce/sonra galerisi. Beğendiğinizi seçin; logonuz, fiyatlarınız ve adresinizle size uyarlayayım.</p>
+    <div class="cta"><a class="btn btn-ink" href="#demolar">Demoları incele</a><a class="btn btn-line" href="#paketler">Paketler ve fiyatlar</a></div>
+    <div class="facts"><span>Telefonda 1 saniyede açılır</span><span>Aylık hosting ücreti yok</span><span>Fiyat ve menüyü kolayca güncellersiniz</span></div>
+    </div>
+    <div class="fan" aria-hidden="true"><img class="f1" src="assets/shots/kafe.webp" width="390" height="600" alt=""><img class="f2" src="assets/shots/oto.webp" width="390" height="600" alt=""><img class="f3" src="assets/shots/klinik.webp" width="390" height="600" alt=""></div>
+  </section>
+
+  <section id="demolar" aria-labelledby="h-d">
+    <div class="sec-t"><h2 id="h-d">Demolar</h2><p>Her sektör için ayrı tasarım dili. İşletme adları kurgusaldır; hepsi gerçekten çalışır, tıklayıp deneyebilirsiniz.</p></div>
+    <div class="demos">
+      <article class="demo">
+        <div class="stage s-kafe"><span class="sector">Kafe · Restoran</span><div class="dk"><img src="assets/shots/kafe-d.webp" width="720" height="450" alt="" loading="lazy" decoding="async"></div><div class="ph"><img src="assets/shots/kafe.webp" width="390" height="600" alt="Pervane kafe QR menü demosunun telefon görünümü" loading="lazy" decoding="async"></div></div>
+        <div class="body">
+          <h3>Pervane Kahve &amp; Mutfak<small>QR menü + masa kartı üretici</small></h3>
+          <ul><li>Kategorili menü, fiyatlar ve alerjen simgeleri</li><li>Tek tuşla Türkçe / İngilizce</li><li>Menü tek dosyadan güncellenir, QR'ı yeniden basmazsınız</li><li>Masa numaralı QR kartlarını kendiniz üretip yazdırırsınız</li></ul>
+          <div class="links"><a class="btn btn-ink" href="kafe/?masa=4">Menüyü aç</a><a class="btn btn-line" href="kafe/qr.html">QR kart üretici</a></div>
+          <p class="fit">Uygun: kafe, restoran, pastane, büfe, otel kahvaltı salonu</p>
+        </div>
+      </article>
+      <article class="demo">
+        <div class="stage s-kuafor"><span class="sector">Kuaför · Berber</span><div class="dk"><img src="assets/shots/kuafor-d.webp" width="720" height="450" alt="" loading="lazy" decoding="async"></div><div class="ph"><img src="assets/shots/kuafor.webp" width="390" height="600" alt="Makas ve Ustura berber demosunun telefon görünümü" loading="lazy" decoding="async"></div></div>
+        <div class="body">
+          <h3>Makas &amp; Ustura<small>Hizmet listesi + WhatsApp randevu</small></h3>
+          <ul><li>Hizmet, süre ve fiyat listesi</li><li>Müşteri hizmet, gün ve saat seçer; WhatsApp mesajı hazır gelir</li><li>"Şu an açık / kapalı" bilgisi saatlere göre kendiliğinden</li><li>Usta tanıtımı, adres ve yol tarifi</li></ul>
+          <div class="links"><a class="btn btn-ink" href="kuafor/">Demoyu aç</a></div>
+          <p class="fit">Uygun: berber, kuaför, güzellik salonu, tırnak stüdyosu, masaj</p>
+        </div>
+      </article>
+      <article class="demo">
+        <div class="stage s-klinik"><span class="sector">Sağlık · Klinik</span><div class="dk"><img src="assets/shots/klinik-d.webp" width="720" height="450" alt="" loading="lazy" decoding="async"></div><div class="ph"><img src="assets/shots/klinik.webp" width="390" height="600" alt="Mavikum diş kliniği demosunun telefon görünümü" loading="lazy" decoding="async"></div></div>
+        <div class="body">
+          <h3>Mavikum Diş Polikliniği<small>Kurumsal tanıtım + randevu talebi</small></h3>
+          <ul><li>Tedaviler, süreç adımları ve hekim kadrosu</li><li>Sık sorulan sorular, açılır kapanır</li><li>KVKK onaylı randevu talep formu</li><li>Sağlık tanıtım kurallarına uygun dil: fiyat ve hasta yorumu yok</li></ul>
+          <div class="links"><a class="btn btn-ink" href="klinik/">Demoyu aç</a></div>
+          <p class="fit">Uygun: diş kliniği, fizyoterapi, veteriner, diyetisyen, psikolog</p>
+        </div>
+      </article>
+      <article class="demo">
+        <div class="stage s-oto"><span class="sector">Oto · Yıkama</span><div class="dk"><img src="assets/shots/oto-d.webp" width="720" height="450" alt="" loading="lazy" decoding="async"></div><div class="ph"><img src="assets/shots/oto.webp" width="390" height="600" alt="Köpük Garaj oto yıkama demosunun telefon görünümü" loading="lazy" decoding="async"></div></div>
+        <div class="body">
+          <h3>Köpük Garaj<small>Paketler + önce/sonra galeri</small></h3>
+          <ul><li>Sedan / SUV / ticari seçimine göre değişen fiyatlar</li><li>Ek hizmet fiyat tablosu</li><li>Kaydırmalı önce / sonra karşılaştırma</li><li>Seçilen paketle hazır WhatsApp mesajı</li></ul>
+          <div class="links"><a class="btn btn-ink" href="oto/">Demoyu aç</a></div>
+          <p class="fit">Uygun: oto yıkama, oto servis, lastikçi, kaporta, detailing</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="pricing" id="paketler" aria-labelledby="h-p">
+    <div class="sec-t"><h2 id="h-p">Paketler</h2><p>Fiyatlar tek seferliktir. Siteler ücretsiz statik barındırmada yayınlanır, aylık kira ödemezsiniz.</p></div>
+    <div class="plans">
+      <div class="plan">
+        <div class="nm">Başlangıç</div>
+        <div class="pr"><small>₺</small>1.500</div>
+        <p class="for">İlk kez internette görünmek isteyen esnaf için tek sayfa.</p>
+        <ul>
+          <li>Demolardan biri işletmenize uyarlanır</li>
+          <li>Hizmetler/fiyatlar, saatler, adres</li>
+          <li>WhatsApp ve arama butonu</li>
+          <li>Ücretsiz yayın (isletmeniz.pages.dev)</li>
+          <li>1 revizyon · 3 iş günü</li>
+          <li class="no">Özel alan adı hariç</li>
+        </ul>
+      </div>
+      <div class="plan pop">
+        <div class="nm">Standart <span>En mantıklısı</span></div>
+        <div class="pr"><small>₺</small>3.500</div>
+        <p class="for">Kendi adresiyle, sektörüne özel özelliği olan site.</p>
+        <ul>
+          <li>Başlangıç'taki her şey</li>
+          <li>Alan adı 1 yıl dahil (.com.tr / .com) + kurulum</li>
+          <li>Sektör modülü: QR menü, randevu, fiyat tablosu veya galeri</li>
+          <li>Google Haritalar / İşletme profili bağlantısı</li>
+          <li>Temel SEO, paylaşım görseli</li>
+          <li>2 revizyon · 5 iş günü</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <div class="nm">Pro</div>
+        <div class="pr"><small>₺</small>6.500</div>
+        <p class="for">Birden çok sayfa, iki dil ve kendi kendine güncelleme.</p>
+        <ul>
+          <li>Standart'taki her şey</li>
+          <li>4–6 sayfa, Türkçe + İngilizce</li>
+          <li>Menü/fiyatları Google Tablolar'dan siz güncellersiniz</li>
+          <li>Formdan e-postaya gelen talepler</li>
+          <li>Google Search Console kurulumu</li>
+          <li>3 ay ücretsiz küçük güncelleme · 7 iş günü</li>
+        </ul>
+      </div>
+    </div>
+    <div class="costs">
+      <div><b>Alan adı yenileme</b><span>2. yıldan itibaren tescil firmasının yıllık ücreti, size fatura edilir; araya kâr eklenmez.</span></div>
+      <div><b>Hosting</b><span>Ücretsiz. Siteler hızlı statik altyapıda (GitHub Pages / Cloudflare Pages) yayınlanır.</span></div>
+      <div><b>Bakım (isteğe bağlı)</b><span>Yıllık 750 ₺: fiyat/menü değişiklikleri, saat güncellemeleri, alan adı takibi.</span></div>
+    </div>
+  </section>
+
+  <section class="how" aria-labelledby="h-h">
+    <div class="sec-t"><h2 id="h-h">Nasıl ilerliyoruz?</h2></div>
+    <ol class="steps">
+      <li><b>Demoyu seçin</b><span>Size en yakın demoyu ve paketi söyleyin. Ödeme Bionluk üzerinden, güvenle.</span></li>
+      <li><b>Bilgilerinizi gönderin</b><span>Logo, birkaç fotoğraf, fiyat listesi ve adres. WhatsApp'tan atmanız yeterli.</span></li>
+      <li><b>Önizleyin, yayına alalım</b><span>Önce telefonunuzda önizleme linki görürsünüz; onaylayınca site yayında.</span></li>
+    </ol>
+  </section>
+
+  <section class="faq" aria-labelledby="h-f">
+    <div class="sec-t"><h2 id="h-f">Sık sorulanlar</h2></div>
+    <details><summary>Aylık ücret ödeyecek miyim?</summary><p>Hayır. Site ücretsiz statik barındırmada çalışır. Tek düzenli gider, özel alan adı aldıysanız yıllık yenileme ücretidir.</p></details>
+    <details><summary>Fiyatlarım değişince ne olacak?</summary><p>Menü ve fiyatlar tek bir dosyada ya da (Pro pakette) Google Tablolar'da durur. Değişikliği ya siz yaparsınız ya da bakım paketinde ben yaparım.</p></details>
+    <details><summary>Instagram sayfam var, site gerekir mi?</summary><p>Instagram'da fiyat listesi, çalışma saati ve konum dağınık kalır; Google aramasında da çıkmaz. Site hepsini tek linkte toplar ve Instagram biyografinize konur.</p></details>
+    <details><summary>Demodaki işletmeler gerçek mi?</summary><p>Hayır. Tüm işletme adları, adresler ve telefonlar kurgusaldır. Tasarımlar sizin bilgilerinizle yeniden düzenlenir.</p></details>
+  </section>
+
+  <section class="end" aria-labelledby="h-e">
+    <div><h2 id="h-e">Kendi işletmenizin demosunu görmek ister misiniz?</h2><p>İşletmenizin adını ve sektörünü yazın; size uygun demoyu sizin adınızla hazırlayıp önizleme linki göndereyim.</p></div>
+    <a class="btn" href="https://bionluk.com/ardazeybek_" target="_blank" rel="noopener">Bionluk'tan mesaj at</a>
+  </section>
+
+  <footer><span>© Arda Zeybek · Bu sayfadaki tüm işletmeler kurgusal demodur.</span><span><a href="https://github.com/ardazeybek-dev">GitHub</a></span></footer>
+</div>
+</body>
+</html>

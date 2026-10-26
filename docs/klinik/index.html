@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mavikum Ağız ve Diş Sağlığı Polikliniği</title>
+<meta name="description" content="Mavikum Ağız ve Diş Sağlığı Polikliniği: tedaviler, hekim kadrosu, sık sorulan sorular ve randevu talebi. Demo tasarım.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230c6461'/%3E%3Cpath d='M20 18c5-3 9 0 12 0s7-3 12 0c5 4 3 12 1 17-2 6-2 13-5 13-4 0-3-10-8-10s-4 10-8 10c-3 0-3-7-5-13-2-5-4-13 1-17z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Manrope";font-weight:200 800;font-display:swap;src:url(../assets/fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-weight:200 800;font-display:swap;src:url(../assets/fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{--white:#ffffff;--mist:#f1f7f6;--mint:#e3f0ed;--teal:#0c6461;--teal-2:#14857f;--deep:#0b2e33;--text:#203a3f;--soft:#5b7176;--line:#dbe7e5;--sun:#f2c879;
+  --f:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--white);color:var(--text);font:400 16px/1.6 var(--f)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal-2);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--teal);color:#fff;padding:10px 14px;border-radius:8px;z-index:60}
+.skip:focus{left:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+@media (min-width:900px){.wrap{padding:0 40px}}
+
+.topline{background:var(--deep);color:#cfe3e1;font-size:13px}
+.topline .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.topline a{color:#fff;font-weight:700;text-decoration:none}
+header.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:36px;height:36px}
+.logo b{font:800 19px/1 var(--f);letter-spacing:-.02em;color:var(--deep)}
+.logo small{display:block;font:600 11px/1.2 var(--f);color:var(--soft);letter-spacing:.02em;margin-top:2px}
+.nav ul{display:none;list-style:none;gap:26px;font-weight:600;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--soft)}
+.nav ul a:hover{color:var(--teal)}
+@media (min-width:960px){.nav ul{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 15px/1 var(--f);text-decoration:none;padding:15px 22px;border-radius:999px;min-height:48px;border:0;cursor:pointer;transition:background .2s,transform .2s}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:#0a5552}
+.btn-soft{background:var(--mint);color:var(--deep)}
+.nav .btn{padding:12px 18px;min-height:44px;font-size:14px}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--mist),#fff 85%);overflow:hidden}
+.hero .wrap{display:grid;gap:36px;padding-top:40px;padding-bottom:56px}
+@media (min-width:960px){.hero .wrap{grid-template-columns:1.05fr .95fr;align-items:center;padding-top:72px;padding-bottom:96px}}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;font-size:13px;font-weight:600;color:var(--soft)}
+.pill i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--mint);color:var(--teal);font-style:normal}
+.hero h1{font:700 clamp(38px,9.4vw,64px)/1.04 var(--f);letter-spacing:-.035em;color:var(--deep);margin-top:20px;max-width:14ch}
+.hero h1 span{color:var(--teal-2)}
+.hero p.lead{font-size:18px;color:var(--soft);margin-top:18px;max-width:46ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.proof{display:flex;flex-wrap:wrap;gap:22px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.proof div{font-size:13px;color:var(--soft);line-height:1.35}
+.proof b{display:block;font:800 26px/1 var(--f);color:var(--deep);letter-spacing:-.02em;margin-bottom:4px}
+.visual{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
+.visual .blob{position:absolute;inset:6%;border-radius:42% 58% 55% 45%/48% 42% 58% 52%;background:radial-gradient(circle at 30% 25%,#fff 0,#d7ebe7 38%,#a9d3cc 100%)}
+.visual svg.tooth{position:absolute;inset:18%;width:64%;height:64%}
+.card-float{position:absolute;background:#fff;border-radius:16px;box-shadow:0 18px 40px -18px rgba(11,46,51,.35);padding:12px 14px;font-size:13px;display:flex;gap:10px;align-items:center;line-height:1.3}
+.card-float b{display:block;color:var(--deep);font-size:14px}
+.card-float .ic{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:var(--mint);color:var(--teal);flex:none}
+.card-float svg{width:20px;height:20px}
+.cf1{left:0;top:14%}.cf2{right:0;bottom:16%}
+@media (max-width:420px){.card-float{font-size:12px;padding:10px}.cf1{left:-4px}.cf2{right:-4px}}
+
+/* trust strip */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr)}
+@media (min-width:900px){.strip ul{grid-template-columns:repeat(4,1fr)}}
+.strip li{display:flex;gap:12px;align-items:center;padding:20px 8px;font-weight:600;font-size:14px;color:var(--deep)}
+.strip svg{width:26px;height:26px;color:var(--teal-2);flex:none}
+
+section{padding:72px 0}
+@media (min-width:900px){section{padding:104px 0}}
+.eyebrow{font:700 13px/1 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+h2{font:700 clamp(30px,7vw,46px)/1.1 var(--f);letter-spacing:-.03em;color:var(--deep);margin-top:12px;max-width:20ch}
+.intro{color:var(--soft);font-size:17px;margin-top:14px;max-width:56ch}
+
+/* treatments */
+.treat{display:grid;gap:14px;margin-top:36px}
+@media (min-width:640px){.treat{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.treat{grid-template-columns:repeat(3,1fr);gap:18px}}
+.t{background:var(--mist);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:10px;transition:background .2s,transform .2s}
+.t:hover{background:var(--mint)}
+.t .ic{width:52px;height:52px;border-radius:16px;background:#fff;display:grid;place-items:center;color:var(--teal)}
+.t .ic svg{width:28px;height:28px}
+.t h3{font:700 20px/1.25 var(--f);color:var(--deep);letter-spacing:-.01em;margin-top:6px}
+.t p{color:var(--soft);font-size:15px}
+.t dl{display:flex;gap:18px;margin-top:auto;padding-top:12px;font-size:13px;border-top:1px solid rgba(11,46,51,.08)}
+.t dt{color:var(--soft)}
+.t dd{font-weight:700;color:var(--deep)}
+
+/* process */
+.process{background:var(--deep);color:#d8e8e6;border-radius:32px;margin:0 12px}
+@media (min-width:900px){.process{margin:0 24px}}
+.process h2{color:#fff}
+.process .eyebrow{color:var(--sun)}
+.steps{list-style:none;display:grid;gap:24px;margin-top:40px;counter-reset:s}
+@media (min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}
+.steps li{counter-increment:s;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.steps li::before{content:"0" counter(s);font:800 14px/1 var(--f);color:var(--sun);letter-spacing:.1em}
+.steps h3{font:700 19px/1.3 var(--f);color:#fff;margin-top:12px}
+.steps p{font-size:15px;color:#a9c4c1;margin-top:6px}
+
+/* team */
+.team{display:grid;gap:16px;margin-top:36px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:900px){.team{grid-template-columns:repeat(4,1fr);gap:20px}}
+.doc .ph{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--mint)}
+.doc .ph svg{width:100%;height:100%;display:block}
+.doc b{display:block;font:700 16px/1.3 var(--f);color:var(--deep);margin-top:12px}
+.doc span{font-size:14px;color:var(--soft)}
+
+/* faq */
+.faq-grid{display:grid;gap:32px}
+@media (min-width:900px){.faq-grid{grid-template-columns:.8fr 1.2fr;gap:64px}}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 0;font:700 17px/1.35 var(--f);color:var(--deep)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";flex:none;width:30px;height:30px;border-radius:50%;background:var(--mist) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 6v12M6 12h12' stroke='%230c6461' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 20px;color:var(--soft);max-width:60ch}
+
+/* contact */
+.contact{background:var(--mist)}
+.contact-grid{display:grid;gap:28px;margin-top:8px}
+@media (min-width:960px){.contact-grid{grid-template-columns:.9fr 1.1fr;gap:56px}}
+.info{display:grid;gap:14px;margin-top:28px}
+.info div{background:#fff;border-radius:18px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.info svg{width:22px;height:22px;color:var(--teal);flex:none;margin-top:2px}
+.info b{display:block;color:var(--deep)}
+.info span{font-size:15px;color:var(--soft)}
+form.card{background:#fff;border-radius:28px;padding:24px;box-shadow:0 24px 60px -30px rgba(11,46,51,.3)}
+@media (min-width:900px){form.card{padding:36px}}
+.f2{display:grid;gap:14px}
+@media (min-width:600px){.f2{grid-template-columns:1fr 1fr}}
+.fl{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;font-weight:700;font-size:14px;color:var(--deep)}
+.fl input,.fl select,.fl textarea{font:500 16px/1.4 var(--f);color:var(--text);background:var(--mist);border:1.5px solid transparent;border-radius:14px;padding:14px 16px;width:100%}
+.fl input:focus,.fl select:focus,.fl textarea:focus{outline:none;border-color:var(--teal-2);background:#fff}
+.fl textarea{min-height:110px;resize:vertical}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--soft);margin:4px 0 18px}
+.consent input{width:20px;height:20px;accent-color:var(--teal);flex:none;margin-top:1px}
+form.card .btn{width:100%}
+.demo-warn{display:none;margin-top:16px;padding:14px 16px;border-radius:14px;background:#fff7e6;border:1px solid #f2d79b;color:#6b4e12;font-size:14px}
+.demo-warn.on{display:block}
+.err{color:#b3261e;font-size:13px;font-weight:600;min-height:0}
+
+footer{background:var(--deep);color:#a9c4c1;font-size:14px;padding:40px 0 32px}
+footer .row{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+footer b{color:#fff}
+.legal{margin-top:18px;font-size:12px;color:#7f9e9a;max-width:80ch}
+.demo-note{margin-top:22px;font-size:12px;text-align:center;color:#8fb0ac}
+.demo-note a{color:#fff}
+</style>
+</head>
+<body>
+<a class="skip" href="#icerik">İçeriğe geç</a>
+<div class="topline"><div class="wrap"><span>Hafta içi 09:00–19:00 · Cumartesi 09:00–14:00</span><span>Acil ağrı hattı: <a href="tel:+905550000000">0555 000 00 00</a></span></div></div>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#0c6461"/><path d="M20 18c5-3 9 0 12 0s7-3 12 0c5 4 3 12 1 17-2 6-2 13-5 13-4 0-3-10-8-10s-4 10-8 10c-3 0-3-7-5-13-2-5-4-13 1-17z" fill="#fff"/><path d="M26 26c2-1 4 0 6 0" stroke="#14857f" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <span><b>Mavikum</b><small>Ağız ve Diş Sağlığı Polikliniği</small></span>
+    </a>
+    <nav aria-label="Ana menü"><ul><li><a href="#tedaviler">Tedaviler</a></li><li><a href="#surec">Süreç</a></li><li><a href="#ekip">Hekimler</a></li><li><a href="#sss">SSS</a></li><li><a href="#iletisim">İletişim</a></li></ul></nav>
+    <a class="btn btn-teal" href="#iletisim">Randevu</a>
+  </div>
+</header>
+
+<main id="icerik">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="pill"><i aria-hidden="true">✓</i>Randevulu çalışır, bekletmez</span>
+      <h1>Diş hekimine gitmek <span>bu kadar sakin</span> olabilir.</h1>
+      <p class="lead">Önce dinliyor, sonra anlatıyoruz. Her tedaviden önce ne yapacağımızı, ne kadar süreceğini ve seçeneklerinizi açıkça konuşuyoruz.</p>
+      <div class="cta"><a class="btn btn-teal" href="#iletisim">Muayene talebi bırakın</a><a class="btn btn-soft" href="#tedaviler">Tedavileri inceleyin</a></div>
+      <div class="proof">
+        <div><b>6</b>uzman hekim</div>
+        <div><b>5</b>tedavi ünitesi</div>
+        <div><b>Pzt–Cmt</b>randevulu hizmet</div>
+      </div>
+    </div>
+    <div class="visual" aria-hidden="true">
+      <div class="blob"></div>
+      <svg class="tooth" viewBox="0 0 200 200"><defs><linearGradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e8f3f1"/></linearGradient></defs>
+        <path d="M52 42c18-12 34-2 48-2s30-10 48 2c18 13 12 42 6 60-7 22-8 52-20 52-15 0-12-38-34-38s-19 38-34 38c-12 0-13-30-20-52-6-18-12-47 6-60z" fill="url(#tg)" stroke="#0c6461" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M70 66c8-4 16-2 22 0" stroke="#14857f" stroke-width="5" stroke-linecap="round" fill="none" opacity=".55"/>
+        <g fill="#f2c879"><path d="M160 34l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/><path d="M38 124l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" opacity=".8"/></g></svg>
+      <div class="card-float cf1"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Tek kullanımlık set</b>her hastaya yeni</span></div>
+      <div class="card-float cf2"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span><b>Ortalama 6 dk</b>bekleme süresi*</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="strip"><div class="wrap"><ul>
+  <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Engelsiz giriş ve asansör</li>
+  <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 15l3-4 3 3 2-2 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Dijital röntgen, düşük doz</li>
+  <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 14.5l1.8 1.8 3.4-3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Kayıtlı sterilizasyon süreci</li>
+  <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c0-3 2.5-5 5-5s5 2 5 5M14 19c0-2 1.5-4 3.5-4S21 17 21 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Çocuk dostu muayene odası</li>
+</ul></div></div>
+
+<section id="tedaviler" aria-labelledby="h-t">
+  <div class="wrap">
+    <div class="eyebrow">Tedaviler</div>
+    <h2 id="h-t">İhtiyacınız olan her şey tek çatı altında</h2>
+    <p class="intro">Süreler ortalama değerlerdir; kesin plan muayeneden sonra hekiminizle birlikte yapılır.</p>
+    <div class="treat">
+      <article class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l-1 6H9zM9 9h6l-.6 4H9.6zM10 13h4l-.5 4h-3zM11 17h2l-.4 4h-1.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><h3>İmplant</h3><p>Eksik dişin yerine titanyum vida üzerine kalıcı diş. Kemik durumu tomografi ile değerlendirilir.</p><dl><div><dt>Seans</dt><dd>2–3</dd></div><div><dt>Süreç</dt><dd>2–4 ay</dd></div></dl></article>
+      <article class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M6 9v6M10 9v6M14 9v6M18 9v6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Ortodonti</h3><p>Tel ya da şeffaf plak ile çapraşıklık ve kapanış bozukluklarının düzeltilmesi.</p><dl><div><dt>Kontrol</dt><dd>4–6 haftada</dd></div><div><dt>Süreç</dt><dd>12–24 ay</dd></div></dl></article>
+      <article class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Diş beyazlatma</h3><p>Muayenehane tipi ya da ev tipi plak ile, mine yapısına uygun tonda.</p><dl><div><dt>Seans</dt><dd>1</dd></div><div><dt>Süre</dt><dd>~60 dk</dd></div></dl></article>
+      <article class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4c2-1 3.5 0 5 0s3-1 5 0c2.5 1.5 1.5 6 .5 8.5C16.5 15 16 20 14.5 20c-1.5 0-1-5-2.5-5s-1 5-2.5 5C8 20 7.5 15 6.5 12.5 5.5 10 4.5 5.5 7 4z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Kanal tedavisi</h3><p>Ağrıyan, iltihaplı dişi çekmeden kurtarmak için sinir dokusunun temizlenmesi.</p><dl><div><dt>Seans</dt><dd>1–2</dd></div><div><dt>Süre</dt><dd>~75 dk</dd></div></dl></article>
+      <article class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 8.5h.01M14 8.5h.01M10 11c1 1 3 1 4 0M6 21c1-3.5 3.5-5 6-5s5 1.5 6 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Çocuk diş hekimliği</h3><p>Flor, fissür örtücü ve ilk muayene. Korkutmadan, oyunla tanıştıran randevular.</p><dl><div><dt>Yaş</dt><dd>2–14</dd></div><div><dt>Kontrol</dt><dd>6 ayda</dd></div></dl></article>
+      <article class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c2 4 5 6 8 6s6-2 8-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6 14h12M9 14v2.5M12 14v3M15 14v2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M8 6l1 2M16 6l-1 2M12 4v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Gülüş tasarımı</h3><p>Estetik dolgu, lamina ve zirkonyum ile dijital ölçü ve önizleme üzerinden planlama.</p><dl><div><dt>Seans</dt><dd>2–4</dd></div><div><dt>Süreç</dt><dd>1–3 hafta</dd></div></dl></article>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="surec" aria-labelledby="h-s">
+  <div class="wrap">
+    <div class="eyebrow">İlk ziyaretten kontrole</div>
+    <h2 id="h-s">Ne olacağını baştan bilirsiniz</h2>
+    <ol class="steps">
+      <li><h3>Muayene ve röntgen</h3><p>Şikâyetinizi dinliyor, dijital röntgen ile ağız içini birlikte inceliyoruz.</p></li>
+      <li><h3>Yazılı tedavi planı</h3><p>Seçenekler, seans sayısı ve süre size yazılı olarak verilir. Karar sizindir.</p></li>
+      <li><h3>Tedavi</h3><p>Randevu saatinde başlarız. Her adımda ne yaptığımızı söyleriz.</p></li>
+      <li><h3>Takip</h3><p>Tedaviden sonra kontrol randevunuzu biz hatırlatırız.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="ekip" aria-labelledby="h-e">
+  <div class="wrap">
+    <div class="eyebrow">Hekimlerimiz</div>
+    <h2 id="h-e">Sizi her seferinde aynı hekim karşılar</h2>
+    <div class="team" id="team"></div>
+  </div>
+</section>
+
+<section id="sss" aria-labelledby="h-f">
+  <div class="wrap faq-grid">
+    <div><div class="eyebrow">Sık sorulan sorular</div><h2 id="h-f">Aklınıza takılanlar</h2><p class="intro">Burada yanıtını bulamadığınız bir soru varsa telefonla ya da formdan sorabilirsiniz.</p></div>
+    <div>
+      <details><summary>İlk muayene ne kadar sürer?</summary><p>Ortalama 30 dakika. Gerekirse dijital röntgen aynı randevuda çekilir ve tedavi seçenekleri o gün konuşulur.</p></details>
+      <details><summary>Tedavi sırasında ağrı hisseder miyim?</summary><p>Tedavilerin büyük kısmı lokal anestezi ile yapılır. Kaygılı hastalarımız için randevuyu daha uzun planlıyor, her adımda mola veriyoruz.</p></details>
+      <details><summary>Özel sağlık sigortası ile çalışıyor musunuz?</summary><p>Anlaşmalı olduğumuz sigorta şirketlerinin listesini telefonla ya da randevu talebi sırasında öğrenebilirsiniz.</p></details>
+      <details><summary>Çocuğumu kaç yaşında getirmeliyim?</summary><p>İlk süt dişi çıktıktan sonra, genellikle 2–3 yaş civarında tanışma muayenesi öneriyoruz.</p></details>
+      <details><summary>Randevumu nasıl iptal ederim?</summary><p>Randevu saatinden en az 24 saat önce telefonla ya da SMS ile bildirmeniz yeterlidir.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="iletisim" aria-labelledby="h-c">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">İletişim</div>
+      <h2 id="h-c">Muayene talebinizi bırakın, sizi arayalım</h2>
+      <div class="info">
+        <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span><b>Adres</b>Lavanta Bulvarı No: 21 Kat: 2, Örnekköy / İzmir</span></div>
+        <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span><b>Telefon</b><a href="tel:+905550000000">0555 000 00 00</a></span></div>
+        <div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Çalışma saatleri</b>Pzt–Cum 09:00–19:00 · Cmt 09:00–14:00 · Pazar kapalı</span></div>
+      </div>
+    </div>
+    <form class="card" id="cform" novalidate>
+      <div class="f2">
+        <label class="fl" for="ad">Ad soyad<input id="ad" name="ad" autocomplete="name" required></label>
+        <label class="fl" for="tel">Telefon<input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xx xx" required></label>
+      </div>
+      <label class="fl" for="konu">Konu<select id="konu" name="konu"><option>İlk muayene</option><option>İmplant</option><option>Ortodonti</option><option>Diş beyazlatma</option><option>Kanal tedavisi</option><option>Çocuk diş hekimliği</option><option>Diğer</option></select></label>
+      <label class="fl" for="not">Kısaca şikâyetiniz (isteğe bağlı)<textarea id="not" name="not"></textarea></label>
+      <label class="consent" for="kvkk"><input type="checkbox" id="kvkk" required><span>Kişisel verilerimin randevu amacıyla işlenmesine ilişkin <u>aydınlatma metnini</u> okudum.</span></label>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn btn-teal" type="submit">Talebi gönder</button>
+      <div class="demo-warn" id="warn" role="status">Bu bir demo sayfasıdır; form hiçbir yere gönderilmedi. Gerçek sitede talepler kliniğin e-postasına ya da WhatsApp hattına düşer.</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row"><span><b>Mavikum</b> Ağız ve Diş Sağlığı Polikliniği</span><span>Mesul Müdür: Dt. Örnek Hekim</span></div>
+    <p class="legal">Bu sitedeki bilgiler genel bilgilendirme amaçlıdır; tanı ve tedavi yerine geçmez. * Bekleme süresi örnek gösterimdir.</p>
+    <p class="demo-note">Bu bir demo tasarımdır — Arda Zeybek · İşletme adı, hekimler ve bilgiler kurgusaldır · <a href="../">Diğer demolar</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var team = [
+    {n:"Dt. Selin Yaman", r:"Ortodonti", skin:"#f1c9a5", hair:"#3b2a20", bg:"#d8ecea", long:true},
+    {n:"Dt. Mert Ilgaz", r:"Ağız, diş ve çene cerrahisi", skin:"#d9a77f", hair:"#1f1a17", bg:"#e6efe0", long:false},
+    {n:"Dt. Ece Toprak", r:"Çocuk diş hekimliği", skin:"#e8b892", hair:"#7a4a2a", bg:"#f3e7d3", long:true},
+    {n:"Dt. Kaan Erdem", r:"Endodonti, estetik", skin:"#c68e66", hair:"#2c2420", bg:"#dfe6f0", long:false}
+  ];
+  function avatar(p){
+    var hair = p.long
+      ? '<path d="M60 92c0-34 18-52 40-52s40 18 40 52v58H60z" fill="'+p.hair+'"/>'
+      : '<path d="M64 88c0-28 16-44 36-44s36 16 36 44c-8-14-20-20-36-20s-28 6-36 20z" fill="'+p.hair+'"/>';
+    return '<svg viewBox="0 0 200 250" aria-hidden="true"><rect width="200" height="250" fill="'+p.bg+'"/>'+
+      '<circle cx="160" cy="46" r="60" fill="#fff" opacity=".35"/>'+
+      (p.long?hair:'')+
+      '<path d="M34 250c4-44 30-66 66-66s62 22 66 66z" fill="#ffffff"/><path d="M84 184l16 26 16-26" fill="none" stroke="#cfe0de" stroke-width="3"/>'+
+      '<path d="M100 186c-8 0-14-6-14-14v-14h28v14c0 8-6 14-14 14z" fill="'+p.skin+'"/>'+
+      '<ellipse cx="66" cy="116" rx="6" ry="9" fill="'+p.skin+'"/><ellipse cx="134" cy="116" rx="6" ry="9" fill="'+p.skin+'"/>'+
+      '<ellipse cx="100" cy="112" rx="34" ry="40" fill="'+p.skin+'"/>'+
+      '<circle cx="87" cy="114" r="3.2" fill="#2b211c"/><circle cx="113" cy="114" r="3.2" fill="#2b211c"/>'+
+      '<path d="M81 104c3-3 8-3 11-1M108 103c3-2 8-2 11 1" stroke="'+p.hair+'" stroke-width="2.6" stroke-linecap="round" fill="none"/>'+
+      '<path d="M89 131c6 6 16 6 22 0" stroke="#8a4b3a" stroke-width="3" stroke-linecap="round" fill="none"/>'+
+      '<circle cx="80" cy="126" r="6" fill="#e88b7a" opacity=".25"/><circle cx="120" cy="126" r="6" fill="#e88b7a" opacity=".25"/>'+
+      (p.long?'':hair)+
+      '<path d="M68 224c10-6 20-8 32-8" stroke="#0c6461" stroke-width="4" stroke-linecap="round" fill="none"/><circle cx="68" cy="226" r="5" fill="#0c6461"/></svg>';
+  }
+  document.getElementById("team").innerHTML = team.map(function(p){return '<div class="doc"><div class="ph">'+avatar(p)+'</div><b>'+p.n+'</b><span>'+p.r+'</span></div>'}).join("");
+
+  var f = document.getElementById("cform"), err = document.getElementById("err"), warn = document.getElementById("warn");
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var ad = f.ad.value.trim(), tel = f.tel.value.replace(/\D/g,"");
+    var msg = !ad ? "Lütfen adınızı yazın." : tel.length < 10 ? "Lütfen geçerli bir telefon numarası yazın." : !f.kvkk.checked ? "Devam etmek için aydınlatma metnini onaylayın." : "";
+    err.textContent = msg;
+    if (msg) { warn.classList.remove("on"); (!ad?f.ad:tel.length<10?f.tel:f.kvkk).focus(); return; }
+    warn.classList.add("on");
+  });
+})();
+</script>
+</body>
+</html>

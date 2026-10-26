@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Makas &amp; Ustura — Berber Atölyesi</title>
+<meta name="description" content="Makas & Ustura Berber Atölyesi: saç kesimi, sakal tıraşı, paketler ve WhatsApp'tan randevu. Demo tasarım.">
+<meta name="theme-color" content="#131110">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23131110'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%23c9a15b'%3EM%26amp;U%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../assets/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Oswald";font-weight:200 700;font-display:swap;src:url(../assets/fonts/oswald-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Oswald";font-weight:200 700;font-display:swap;src:url(../assets/fonts/oswald-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{--bg:#131110;--bg-2:#1c1917;--bg-3:#26211e;--bone:#efe8dc;--mute:#a89d8e;--brass:#c9a15b;--brass-2:#e2c084;--ox:#8c2f28;--line:#3a332d;
+  --display:"Oswald","Arial Narrow",Impact,sans-serif;--body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--bone);font:400 16px/1.55 var(--body)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--brass);color:#000;padding:8px 12px;z-index:50}
+.skip:focus{left:8px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+@media (min-width:900px){.wrap{padding:0 40px}}
+.pole{height:10px;background:repeating-linear-gradient(-45deg,var(--ox) 0 12px,var(--bone) 12px 24px,#1f3b5c 24px 36px,var(--bone) 36px 48px)}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:16px}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none}
+.mark .seal{width:44px;height:44px;border:1.5px solid var(--brass);border-radius:50%;display:grid;place-items:center;font:600 14px/1 var(--display);color:var(--brass);letter-spacing:.04em}
+.mark b{font:600 20px/1 var(--display);letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:420px){.mark b{font-size:17px}.mark small{letter-spacing:.1em!important;font-size:10px!important}.nav .btn{padding:12px}}
+.mark small{white-space:nowrap;display:block;font:400 11px/1 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-top:5px}
+.nav ul{display:none;list-style:none;gap:28px;font:500 14px/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
+.nav ul a{text-decoration:none;color:var(--mute)}
+.nav ul a:hover{color:var(--bone)}
+@media (min-width:900px){.nav ul{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 15px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;white-space:nowrap;padding:16px 22px;border-radius:2px;min-height:50px;border:0;cursor:pointer}
+.btn-brass{background:var(--brass);color:#16120e}
+.btn-brass:hover{background:var(--brass-2)}
+.btn-line{border:1px solid var(--line);color:var(--bone);background:transparent}
+.btn svg{width:18px;height:18px}
+.nav .btn{padding:12px 16px;min-height:44px;font-size:13px}
+
+/* hero */
+.hero{padding:28px 0 44px;display:grid;gap:32px;border-bottom:1px solid var(--line)}
+@media (min-width:900px){.hero{grid-template-columns:1.25fr .75fr;align-items:end;padding:56px 0 72px}}
+.kicker{font:500 13px/1 var(--display);letter-spacing:.32em;text-transform:uppercase;color:var(--brass);display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:28px;height:1px;background:var(--brass)}
+.hero h1{font:600 clamp(64px,19vw,176px)/.92 var(--display);text-transform:uppercase;letter-spacing:-.01em;margin-top:34px}
+.hero h1 span{display:block}
+.hero h1 .o{-webkit-text-stroke:1.5px var(--bone);color:transparent}
+.hero h1 .b{color:var(--brass)}
+.hero-side p{color:var(--mute);font-size:17px;max-width:38ch}
+.hero-side .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border-top:1px solid var(--line)}
+.stats div{padding:14px 0 0}
+.stats b{display:block;font:500 30px/1 var(--display);color:var(--bone)}
+.stats span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.open-now{display:inline-flex;align-items:center;gap:8px;font:500 13px/1 var(--body);margin-bottom:16px;padding:8px 12px;border:1px solid var(--line);border-radius:999px}
+.open-now i{width:8px;height:8px;border-radius:50%;background:#6fbf73;box-shadow:0 0 0 4px rgba(111,191,115,.15)}
+.open-now.closed i{background:#d0645b;box-shadow:0 0 0 4px rgba(208,100,91,.15)}
+
+/* sections */
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+@media (min-width:900px){section{padding:88px 0}}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.sec-head h2{font:600 clamp(40px,10vw,76px)/.9 var(--display);text-transform:uppercase}
+.sec-head h2 em{font-style:normal;color:var(--brass)}
+.sec-head p{color:var(--mute);max-width:40ch}
+
+/* price list */
+.menu{display:grid;gap:36px}
+@media (min-width:900px){.menu{grid-template-columns:repeat(3,1fr);gap:40px}}
+.group h3{font:500 15px/1 var(--display);letter-spacing:.24em;text-transform:uppercase;color:var(--brass);padding-bottom:12px;border-bottom:1px solid var(--brass);display:flex;justify-content:space-between}
+.group h3 span{color:var(--mute);letter-spacing:.1em}
+.svc{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.svc h4{font:500 20px/1.15 var(--display);letter-spacing:.02em;text-transform:uppercase}
+.svc .p{font:500 22px/1 var(--display);text-align:right;font-variant-numeric:tabular-nums}
+.svc .p small{font-size:14px;color:var(--mute);margin-right:2px}
+.svc p{grid-column:1;color:var(--mute);font-size:14px}
+.svc .d{grid-column:2;text-align:right;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.svc.best{background:linear-gradient(90deg,rgba(201,161,91,.12),transparent);margin:0 -12px;padding:16px 12px;border-left:2px solid var(--brass)}
+.best-tag{display:inline-block;font:500 11px/1 var(--display);letter-spacing:.18em;text-transform:uppercase;color:#16120e;background:var(--brass);padding:4px 6px;margin-left:8px;vertical-align:3px}
+
+/* booking */
+.booking{display:grid;gap:28px}
+@media (min-width:900px){.booking{grid-template-columns:1fr 1fr;gap:56px}}
+.book-card{background:var(--bg-2);border:1px solid var(--line);padding:22px;border-radius:4px}
+@media (min-width:900px){.book-card{padding:32px}}
+fieldset{border:0;margin-bottom:22px}
+legend{font:500 13px/1 var(--display);letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin-bottom:12px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt span{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:2px;font:500 15px/1.1 var(--body);cursor:pointer;transition:border-color .15s,background .15s}
+.opt input:checked+span{border-color:var(--brass);background:rgba(201,161,91,.14);color:var(--brass-2)}
+.opt input:focus-visible+span{outline:2px solid var(--brass);outline-offset:2px}
+.field{display:flex;flex-direction:column;gap:8px;font:500 13px/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.field input{font:400 17px/1.2 var(--body);letter-spacing:0;text-transform:none;color:var(--bone);background:var(--bg);border:1px solid var(--line);padding:14px;border-radius:2px}
+.preview{margin-top:20px;padding:16px;background:#0e1410;border:1px solid #23402b;border-radius:10px 10px 10px 2px;font-size:14px;color:#cfe8d2;white-space:pre-line}
+.preview b{display:block;font:500 11px/1 var(--display);letter-spacing:.2em;text-transform:uppercase;color:#6fbf73;margin-bottom:8px}
+.book-card .btn{width:100%;margin-top:16px;background:#25d366;color:#06240f}
+.book-card .btn:hover{background:#3ee07a}
+.side-info{display:grid;gap:20px;align-content:start}
+.hours{width:100%;border-collapse:collapse;font-size:15px}
+.hours th,.hours td{padding:12px 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400}
+.hours td{text-align:right;font-variant-numeric:tabular-nums;color:var(--bone)}
+.hours th{color:var(--mute)}
+.hours tr.today th,.hours tr.today td{color:var(--brass-2);font-weight:600}
+.hours tr.today th::after{content:" · bugün";font-weight:400;color:var(--mute)}
+.side-info h3{font:500 15px/1 var(--display);letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin-bottom:6px}
+
+/* masters */
+.masters{display:grid;gap:14px}
+@media (min-width:700px){.masters{grid-template-columns:repeat(3,1fr)}}
+.master{background:var(--bg-2);border:1px solid var(--line);padding:22px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.master .mono{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a322b,#1a1613);border:1px solid var(--brass);display:grid;place-items:center;font:500 22px/1 var(--display);color:var(--brass)}
+.master b{font:500 20px/1.1 var(--display);text-transform:uppercase;letter-spacing:.04em;display:block}
+.master span{font-size:14px;color:var(--mute)}
+
+/* map */
+.where{display:grid;gap:24px}
+@media (min-width:900px){.where{grid-template-columns:1.3fr .7fr;align-items:center}}
+.map{position:relative;border:1px solid var(--line);aspect-ratio:16/10;overflow:hidden;background:#1a1714}
+.map svg{width:100%;height:100%;display:block}
+.addr b{font:500 26px/1.15 var(--display);text-transform:uppercase;display:block}
+.addr p{color:var(--mute);margin-top:8px}
+.addr .btn{margin-top:18px}
+
+footer{padding:36px 0 110px;color:var(--mute);font-size:14px}
+@media (min-width:900px){footer{padding-bottom:40px}}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.demo-note{margin-top:20px;font-size:12px;text-align:center;color:#8a7f72}
+.demo-note a{text-decoration:underline}
+.fab{position:fixed;right:16px;bottom:16px;left:16px;z-index:30;display:flex;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.fab .btn{flex:1;background:#25d366;color:#06240f}
+@media (min-width:900px){.fab{left:auto}.fab .btn{flex:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#randevu">Randevuya geç</a>
+<div class="pole" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="nav">
+    <a class="mark" href="#">
+      <span class="seal" aria-hidden="true">M&amp;U</span>
+      <span><b>Makas &amp; Ustura</b><small>Berber Atölyesi · 2014</small></span>
+    </a>
+    <nav aria-label="Ana menü"><ul><li><a href="#hizmetler">Hizmetler</a></li><li><a href="#randevu">Randevu</a></li><li><a href="#ustalar">Ustalar</a></li><li><a href="#adres">Adres</a></li></ul></nav>
+    <a class="btn btn-brass" href="#randevu">Randevu al</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <div class="kicker">Örnekköy · Erkek kuaförü</div>
+      <h1><span>Kesim.</span><span class="o">Tıraş.</span><span class="b">Sohbet.</span></h1>
+    </div>
+    <div class="hero-side">
+      <div class="open-now" id="openNow" role="status"><i aria-hidden="true"></i><span>Çalışma saatleri yükleniyor</span></div>
+      <p>Sıcak havlu, ustura, iyi müzik ve demlenmiş çay. Sıra beklemeyin; saatinizi WhatsApp'tan ayırtın, geldiğinizde koltuğunuz hazır olsun.</p>
+      <div class="cta">
+        <a class="btn btn-brass" href="#randevu">Saat seç</a>
+        <a class="btn btn-line" href="#hizmetler">Fiyatlar</a>
+      </div>
+      <div class="stats">
+        <div><b>12</b><span>Yıllık usta</span></div>
+        <div><b>3</b><span>Koltuk</span></div>
+        <div><b>4,9</b><span>Müşteri puanı*</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+<section id="hizmetler" aria-labelledby="h-hz">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="h-hz">Hizmet <em>&amp;</em> fiyat</h2><p>Fiyatlar sabittir, sürpriz yoktur. Süreler ortalamadır; acele etmeyiz.</p></div>
+    <div class="menu">
+      <div class="group">
+        <h3>Saç <span>01</span></h3>
+        <div class="svc"><h4>Klasik kesim</h4><span class="p"><small>₺</small>400</span><p>Yıkama, kesim, şekillendirme</p><span class="d">40 dk</span></div>
+        <div class="svc"><h4>Skin fade</h4><span class="p"><small>₺</small>450</span><p>Sıfırdan geçişli, makine + makas</p><span class="d">50 dk</span></div>
+        <div class="svc"><h4>Çocuk kesimi</h4><span class="p"><small>₺</small>300</span><p>12 yaş altı</p><span class="d">30 dk</span></div>
+        <div class="svc"><h4>Saç boyama</h4><span class="p"><small>₺</small>600</span><p>Beyaz kapatma, doğal ton</p><span class="d">45 dk</span></div>
+      </div>
+      <div class="group">
+        <h3>Sakal <span>02</span></h3>
+        <div class="svc"><h4>Sakal şekillendirme</h4><span class="p"><small>₺</small>250</span><p>Makas, makine, ustura ile hat</p><span class="d">25 dk</span></div>
+        <div class="svc"><h4>Ustura tıraşı</h4><span class="p"><small>₺</small>300</span><p>Sıcak havlu, köpük, kolonya</p><span class="d">30 dk</span></div>
+        <div class="svc"><h4>Cilt bakımı</h4><span class="p"><small>₺</small>350</span><p>Siyah nokta maskesi, buhar, krem</p><span class="d">30 dk</span></div>
+        <div class="svc"><h4>Kaş &amp; kulak</h4><span class="p"><small>₺</small>100</span><p>İp ve ağda</p><span class="d">10 dk</span></div>
+      </div>
+      <div class="group">
+        <h3>Paketler <span>03</span></h3>
+        <div class="svc best"><h4>Usta paketi<span class="best-tag">En çok</span></h4><span class="p"><small>₺</small>600</span><p>Kesim + sakal + sıcak havlu</p><span class="d">60 dk</span></div>
+        <div class="svc"><h4>Damat tıraşı</h4><span class="p"><small>₺</small>2.500</span><p>Kesim, tıraş, cilt bakımı, fotoğraf köşesi, ikram</p><span class="d">120 dk</span></div>
+        <div class="svc"><h4>Baba &amp; oğul</h4><span class="p"><small>₺</small>650</span><p>İki kesim, aynı saat</p><span class="d">60 dk</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="randevu" aria-labelledby="h-rd">
+  <div class="wrap booking">
+    <div>
+      <div class="sec-head"><h2 id="h-rd">Randevu <em>al</em></h2><p>Üç seçim yapın, mesajınız hazır olsun. Gönder tuşuyla WhatsApp açılır; onayı ustamız birkaç dakika içinde verir.</p></div>
+      <form class="book-card" id="book" novalidate>
+        <fieldset><legend>1 · Hizmet</legend><div class="opts" id="svcOpts"></div></fieldset>
+        <fieldset><legend>2 · Gün</legend><div class="opts" id="dayOpts"></div></fieldset>
+        <fieldset><legend>3 · Saat</legend><div class="opts" id="timeOpts"></div></fieldset>
+        <label class="field" for="nm">Adınız (isteğe bağlı)<input id="nm" name="nm" autocomplete="given-name" placeholder="Örn. Mert"></label>
+        <div class="preview" aria-live="polite"><b>WhatsApp mesajınız</b><span id="msg"></span></div>
+        <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp'ta gönder</a>
+      </form>
+    </div>
+    <div class="side-info">
+      <div><h3>Çalışma saatleri</h3>
+        <table class="hours" id="hours"><caption class="sr" style="position:absolute;left:-9999px">Haftalık çalışma saatleri</caption><tbody></tbody></table>
+      </div>
+      <div><h3>Bilmeniz iyi olur</h3><p style="color:var(--mute)">10 dakikadan fazla gecikmede randevunuz bir sonraki boş saate kayabilir. Nakit, kart ve havale geçerlidir. Bekleme alanında çay ve kahve ikramımızdır.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ustalar" aria-labelledby="h-us">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="h-us">Ustalar</h2><p>Her ustanın kendi müdavimi var. Randevu mesajında tercih ettiğiniz ustayı yazabilirsiniz.</p></div>
+    <div class="masters">
+      <div class="master"><span class="mono" aria-hidden="true">KU</span><div><b>Kerem Usta</b><span>Kurucu · klasik kesim, ustura</span></div></div>
+      <div class="master"><span class="mono" aria-hidden="true">BA</span><div><b>Batu</b><span>Fade ve modern kesimler</span></div></div>
+      <div class="master"><span class="mono" aria-hidden="true">EM</span><div><b>Emre</b><span>Sakal tasarımı, cilt bakımı</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="adres" aria-labelledby="h-ad">
+  <div class="wrap where">
+    <div class="map" role="img" aria-label="Dükkânın konumunu gösteren sade harita: Çınar Caddesi ile Kumsal Sokak köşesi">
+      <svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="640" height="400" fill="#1a1714"/>
+        <g fill="#211d19"><rect x="20" y="20" width="160" height="110"/><rect x="220" y="20" width="190" height="110"/><rect x="450" y="20" width="170" height="110"/><rect x="20" y="170" width="160" height="90"/><rect x="450" y="170" width="170" height="90"/><rect x="20" y="300" width="160" height="80"/><rect x="220" y="300" width="190" height="80"/><rect x="450" y="300" width="170" height="80"/></g>
+        <rect x="220" y="170" width="190" height="90" fill="#1f2a1e"/>
+        <g fill="#2d3a2a" opacity=".9"><circle cx="260" cy="200" r="10"/><circle cx="300" cy="225" r="12"/><circle cx="350" cy="198" r="9"/><circle cx="380" cy="235" r="11"/></g>
+        <g stroke="#3a332d" stroke-width="2"><path d="M0 150h640M0 280h640"/><path d="M200 0v400M430 0v400"/></g>
+        <path d="M0 150h640" stroke="#c9a15b" stroke-width="6" opacity=".35"/>
+        <g font-family="Oswald,Arial Narrow,sans-serif" font-size="12" letter-spacing="3" fill="#a89d8e"><text x="40" y="144">ÇINAR CADDESİ</text><text x="210" y="390" transform="rotate(-90 210 390)">KUMSAL SK.</text><text x="300" y="250" fill="#5d7356">PARK</text></g>
+        <g transform="translate(430 150)"><circle r="34" fill="#c9a15b" opacity=".15"/><circle r="18" fill="#c9a15b" opacity=".25"/><path d="M0-40c-12 0-20 9-20 20 0 15 20 34 20 34s20-19 20-34c0-11-8-20-20-20z" fill="#c9a15b"/><circle cy="-20" r="7" fill="#131110"/></g>
+        <g transform="translate(456 110)"><rect width="150" height="32" rx="2" fill="#131110" stroke="#c9a15b"/><text x="12" y="21" font-family="Oswald,Arial Narrow,sans-serif" font-size="14" letter-spacing="1.5" fill="#efe8dc">MAKAS &amp; USTURA</text></g>
+      </svg>
+    </div>
+    <div class="addr" id="h-ad-wrap">
+      <h2 class="sr" id="h-ad" style="position:absolute;left:-9999px">Adres</h2>
+      <b>Çınar Cad. No: 48/B<br>Örnekköy / İzmir</b>
+      <p>Kumsal Sokak köşesi, parkın karşısı. Dükkân önünde 15 dakikalık park yeri var.</p>
+      <p><a href="tel:+905550000000">0555 000 00 00</a></p>
+      <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%87%C4%B1nar%20Caddesi%20%C4%B0zmir" target="_blank" rel="noopener">Yol tarifi al</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row"><span>© Makas &amp; Ustura Berber Atölyesi</span><span>Salı – Pazar · @makasveustura</span></div>
+    <p style="margin-top:8px;font-size:12px">* Puan örnek gösterimdir.</p>
+    <p class="demo-note">Bu bir demo tasarımdır — Arda Zeybek · İşletme adı ve bilgileri kurgusaldır · <a href="../">Diğer demolar</a></p>
+  </div>
+</footer>
+<div class="fab"><a class="btn" id="fab" href="https://wa.me/905550000000" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp randevu</a></div>
+
+<script>
+(function(){
+  var PHONE = "905550000000";
+  var HOURS = [ // 0=Pazar
+    {d:"Pazar", o:"11:00", c:"18:00"}, {d:"Pazartesi", o:null, c:null}, {d:"Salı", o:"09:00", c:"21:00"},
+    {d:"Çarşamba", o:"09:00", c:"21:00"}, {d:"Perşembe", o:"09:00", c:"21:00"}, {d:"Cuma", o:"09:00", c:"21:00"}, {d:"Cumartesi", o:"09:00", c:"22:00"}
+  ];
+  var SERVICES = ["Klasik kesim","Skin fade","Sakal şekillendirme","Ustura tıraşı","Usta paketi","Çocuk kesimi"];
+  var now = new Date(), today = now.getDay();
+
+  // hours table, Monday first
+  var tb = document.querySelector("#hours tbody"), order=[1,2,3,4,5,6,0];
+  tb.innerHTML = order.map(function(i){var h=HOURS[i];return '<tr'+(i===today?' class="today"':'')+'><th scope="row">'+h.d+'</th><td>'+(h.o?h.o+' – '+h.c:'Kapalı')+'</td></tr>'}).join("");
+
+  function mins(s){var p=s.split(":");return +p[0]*60+ +p[1]}
+  var h = HOURS[today], m = now.getHours()*60+now.getMinutes(), on = document.getElementById("openNow");
+  var isOpen = h.o && m>=mins(h.o) && m<mins(h.c);
+  on.classList.toggle("closed", !isOpen);
+  on.querySelector("span").textContent = isOpen ? "Şu an açık · "+h.c+"'e kadar" : "Şu an kapalı · randevu için mesaj atabilirsiniz";
+
+  function radios(el, name, list, checkedIdx){
+    el.innerHTML = list.map(function(v,i){return '<label class="opt"><input type="radio" name="'+name+'" value="'+v.value+'"'+(i===checkedIdx?' checked':'')+(v.disabled?' disabled':'')+'><span>'+v.label+'</span></label>'}).join("");
+  }
+  radios(document.getElementById("svcOpts"), "svc", SERVICES.map(function(s){return {value:s,label:s}}), 4);
+
+  // next 6 open days
+  var days=[], d=new Date(now); d.setHours(0,0,0,0);
+  var names=["Paz","Pzt","Sal","Çar","Per","Cum","Cmt"], months=["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"];
+  while(days.length<6){ if(HOURS[d.getDay()].o){ var lbl=(days.length===0&&d.toDateString()===now.toDateString())?"Bugün":names[d.getDay()]+" "+d.getDate()+" "+months[d.getMonth()]; days.push({value:d.toISOString().slice(0,10),label:lbl,dow:d.getDay(),full:d.getDate()+" "+months[d.getMonth()]+" "+HOURS[d.getDay()].d}); } d.setDate(d.getDate()+1); }
+  radios(document.getElementById("dayOpts"), "day", days, 0);
+
+  function times(){
+    var sel = document.querySelector('input[name=day]:checked'), di = days.findIndex(function(x){return x.value===sel.value});
+    var hh = HOURS[days[di].dow], list=[];
+    for (var t=mins(hh.o); t<=mins(hh.c)-60; t+=60){
+      var lab=String(Math.floor(t/60)).padStart(2,"0")+":00", past = days[di].label==="Bugün" && t<=m+30;
+      list.push({value:lab,label:lab,disabled:past});
+    }
+    var first = list.findIndex(function(x){return !x.disabled});
+    radios(document.getElementById("timeOpts"), "time", list, first<0?-1:first);
+  }
+  times();
+
+  function build(){
+    var s = document.querySelector('input[name=svc]:checked'), dd = document.querySelector('input[name=day]:checked'), tt = document.querySelector('input[name=time]:checked');
+    var nm = document.getElementById("nm").value.trim();
+    var day = days.find(function(x){return x.value===dd.value});
+    var text = "Merhaba Makas & Ustura," + (nm? " ben "+nm+".":"") + "\n" + day.full + (tt? " saat "+tt.value : "") + " için " + s.value + " randevusu almak istiyorum. Uygun mudur?";
+    document.getElementById("msg").textContent = text;
+    var url = "https://wa.me/"+PHONE+"?text="+encodeURIComponent(text);
+    document.getElementById("waBtn").href = url;
+    document.getElementById("fab").href = url;
+  }
+  document.getElementById("book").addEventListener("change", function(e){ if(e.target.name==="day") times(); build(); });
+  document.getElementById("nm").addEventListener("input", build);
+  document.getElementById("book").addEventListener("submit", function(e){e.preventDefault()});
+  build();
+})();
+</script>
+</body>
+</html>

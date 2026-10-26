@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pervane Kahve &amp; Mutfak — Menü</title>
+<meta name="description" content="Pervane Kahve & Mutfak QR menü: kahveler, kahvaltı, mutfak, soğuk içecekler ve tatlılar. Demo tasarım.">
+<meta name="theme-color" content="#f3ebdd">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23b4532a'/%3E%3Cpath d='M32 14c6 6 6 12 0 18-6-6-6-12 0-18zm0 36c-6-6-6-12 0-18 6 6 6 12 0 18zM14 32c6-6 12-6 18 0-6 6-12 6-18 0zm36 0c-6 6-12 6-18 0 6-6 12-6 18 0z' fill='%23f3ebdd'/%3E%3C/svg%3E">
+<link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="menu.json" as="fetch" crossorigin>
+<style>
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;src:url(../assets/fonts/fraunces-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;src:url(../assets/fonts/fraunces-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:300 900;font-display:swap;src:url(../assets/fonts/figtree-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:300 900;font-display:swap;src:url(../assets/fonts/figtree-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{
+  --paper:#f3ebdd;--paper-2:#ebe0cd;--card:#faf5ec;--ink:#2a1d17;--soft:#6b5a4d;--line:#d9cab2;
+  --terra:#a8481f;--terra-2:#c96a3d;--olive:#5f6b3a;--espresso:#3b2518;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--sans);
+  background-image:radial-gradient(circle at 12% 8%,rgba(168,72,31,.07),transparent 40%),radial-gradient(circle at 90% 60%,rgba(95,107,58,.07),transparent 45%)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:8px 12px;border-radius:6px;z-index:50}
+.skip:focus{left:8px}
+
+/* layout */
+.shell{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);min-height:100vh}
+.shell>*{min-width:0}
+@media (min-width:980px){.shell{grid-template-columns:400px minmax(0,1fr);gap:56px;padding:0 40px}}
+
+/* brand panel */
+.brand{padding:20px 20px 8px;position:relative}
+@media (min-width:980px){.brand{position:sticky;top:0;height:100vh;padding:48px 0;display:flex;flex-direction:column}}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:38px;height:38px;flex:none}
+.logo b{font:600 22px/1 var(--serif);letter-spacing:-.01em;font-variation-settings:"SOFT" 100,"WONK" 1}
+.logo small{display:block;font:500 11px/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-top:3px}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--card)}
+.lang button{font:600 12px/1 var(--sans);letter-spacing:.08em;border:0;background:none;color:var(--soft);padding:9px 12px;border-radius:999px;cursor:pointer;min-width:44px;min-height:34px}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.masthead{margin-top:28px}
+.masthead .eyebrow{font:500 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--terra)}
+.masthead h1{font:400 clamp(56px,16vw,104px)/.9 var(--serif);letter-spacing:-.035em;margin-top:10px;font-variation-settings:"SOFT" 50,"WONK" 1,"opsz" 144}
+.masthead h1 em{font-style:normal;color:var(--terra);font-variation-settings:"SOFT" 100,"WONK" 1}
+.masthead p{font:400 17px/1.45 var(--serif);color:var(--soft);margin-top:14px;max-width:34ch;font-style:italic}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{display:inline-flex;align-items:center;gap:7px;font:500 13px/1 var(--sans);padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
+.chip svg{width:14px;height:14px}
+.chip .dot{width:7px;height:7px;border-radius:50%;background:var(--olive);box-shadow:0 0 0 3px rgba(95,107,58,.18)}
+.table-badge{display:none;margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--espresso);color:var(--paper);font:500 14px/1.35 var(--sans)}
+.table-badge.on{display:flex;gap:12px;align-items:center}
+.table-badge b{font:600 28px/1 var(--serif);color:#f0c9a4;white-space:nowrap}
+.panel-art{display:none}
+@media (min-width:980px){
+  .panel-art{display:block;margin-top:auto;padding-top:24px}
+  .panel-art svg{width:100%;height:auto;max-height:220px}
+  .addr{font:400 14px/1.5 var(--sans);color:var(--soft);margin-top:14px}
+}
+@media (max-width:979px){.addr{display:none}}
+
+/* category nav */
+.catnav{position:sticky;top:0;z-index:10;background:rgba(243,235,221,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.catnav ul{list-style:none;display:flex;gap:6px;overflow-x:auto;padding:10px 20px;scrollbar-width:none}
+.catnav ul::-webkit-scrollbar{display:none}
+.catnav a{display:block;white-space:nowrap;text-decoration:none;font:600 14px/1 var(--sans);color:var(--soft);padding:11px 14px;border-radius:999px;transition:background .2s,color .2s}
+.catnav a.active{background:var(--terra);color:#fff}
+@media (min-width:980px){.catnav{top:0;margin-top:32px;border:1px solid var(--line);border-radius:999px;background:rgba(250,245,236,.9)}.catnav ul{padding:6px}}
+
+/* menu */
+main{padding:4px 0 40px}
+.cat{padding:34px 20px 8px}
+@media (min-width:980px){.cat{padding:48px 0 8px}}
+.cat-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:14px}
+.cat-head .num{font:500 12px/1 var(--sans);letter-spacing:.18em;color:var(--terra)}
+.cat-head h2{font:500 clamp(34px,9vw,48px)/1 var(--serif);letter-spacing:-.02em;margin-top:6px;font-variation-settings:"SOFT" 80,"opsz" 96}
+.cat-head p{font:italic 400 15px/1.4 var(--serif);color:var(--soft);margin-top:6px}
+.cat-head svg{width:96px;height:72px;color:var(--terra)}
+@media (min-width:980px){.cat-head svg{width:128px;height:92px}}
+.items{list-style:none}
+.item{padding:18px 0;border-bottom:1px dashed var(--line)}
+.item:last-child{border-bottom:0}
+.row{display:flex;align-items:baseline;gap:10px}
+.row h3{font:600 19px/1.25 var(--serif);letter-spacing:-.005em;font-variation-settings:"opsz" 24}
+.leader{flex:1;border-bottom:2px dotted #c4b294;transform:translateY(-4px);min-width:16px}
+.price{font:600 18px/1 var(--serif);white-space:nowrap;font-variant-numeric:lining-nums tabular-nums}
+.price small{font:500 13px/1 var(--sans);color:var(--soft);margin-right:2px}
+.desc{color:var(--soft);font-size:15px;margin-top:5px;max-width:52ch}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;align-items:center}
+.alg{display:inline-flex;align-items:center;gap:5px;font:500 12px/1 var(--sans);color:var(--ink);background:var(--paper-2);border-radius:999px;padding:5px 9px 5px 6px}
+.alg svg{width:14px;height:14px;color:var(--terra)}
+.alg.vegan svg{color:var(--olive)}
+.sig{font:600 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--olive);padding:6px 8px;border-radius:4px}
+
+.legend{margin:40px 20px 0;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+@media (min-width:980px){.legend{margin:48px 0 0}}
+.legend h2{font:500 22px/1.2 var(--serif)}
+.legend ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 16px;margin-top:14px}
+@media (min-width:600px){.legend ul{grid-template-columns:repeat(3,1fr)}}
+.legend li{display:flex;align-items:center;gap:8px;font-size:14px}
+.legend svg{width:18px;height:18px;color:var(--terra)}
+.legend p{font-size:13px;color:var(--soft);margin-top:14px}
+
+footer{margin:40px 20px 0;padding:24px 0 32px;border-top:1px solid var(--line);font-size:14px;color:var(--soft)}
+@media (min-width:980px){footer{margin:48px 0 0}}
+footer .cols{display:grid;gap:16px}
+@media (min-width:600px){footer .cols{grid-template-columns:1fr 1fr}}
+footer strong{display:block;color:var(--ink);font:600 16px/1.3 var(--serif);margin-bottom:4px}
+.demo-note{margin-top:24px;font-size:12px;color:#6b5a4d;text-align:center}
+.demo-note a{text-decoration:underline;text-underline-offset:2px}
+.loading{padding:60px 20px;text-align:center;color:var(--soft);font:italic 18px var(--serif)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="skip" href="#menu" data-i18n="skip">Menüye geç</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-gluten" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 22V6"/><path d="M12 9c-3-1-4-3-4-5 3 0 4 2 4 5zm0 0c3-1 4-3 4-5-3 0-4 2-4 5zm0 5c-3-1-4-3-4-5 3 0 4 2 4 5zm0 0c3-1 4-3 4-5-3 0-4 2-4 5zm0 5c-3-1-4-3-4-5 3 0 4 2 4 5zm0 0c3-1 4-3 4-5-3 0-4 2-4 5z"/></g></symbol>
+    <symbol id="i-sut" viewBox="0 0 24 24"><path d="M12 3c3 4.5 6 7.8 6 11a6 6 0 1 1-12 0c0-3.2 3-6.5 6-11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 15a3 3 0 0 0 3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-yumurta" viewBox="0 0 24 24"><path d="M12 3c3.6 0 6.5 5.5 6.5 10a6.5 6.5 0 0 1-13 0C5.5 8.5 8.4 3 12 3z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="14" r="2.6" fill="currentColor"/></symbol>
+    <symbol id="i-kuruyemis" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 10c0-3 3-5 7-5s7 2 7 5H5z"/><path d="M6 10c0 6 3 10 6 10s6-4 6-10"/><path d="M12 5V3"/></g></symbol>
+    <symbol id="i-vegan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15z"/><path d="M5 19 13 11"/></g></symbol>
+    <symbol id="i-aci" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7c3 0 5 2 5 5 0 5-6 9-13 9 4-2 6-5 6-9 0-3 0-5 2-5z"/><path d="M14 7c0-2 1-3 3-4"/></g></symbol>
+
+    <symbol id="a-cup" viewBox="0 0 128 92"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M30 44h56v10c0 15-12.5 27-28 27S30 69 30 54z"/><path d="M86 50h6a9 9 0 0 1 0 18h-8"/><path d="M18 84h84"/><path d="M48 34c-4-6 4-9 0-16M60 34c-4-6 4-9 0-16M72 34c-4-6 4-9 0-16"/><path d="M40 56c3 8 9 13 18 14" opacity=".5"/></g></symbol>
+    <symbol id="a-pan" viewBox="0 0 128 92"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="54" cy="56" rx="38" ry="22"/><path d="M90 50l30-10"/><path d="M42 50c-6-8 6-14 10-8 8-6 16 2 10 8 6 8-6 13-10 8-6 6-16 0-10-8z"/><circle cx="52" cy="52" r="5" fill="currentColor" opacity=".9"/><path d="M68 64c-4-5 4-9 7-5 5-4 10 1 7 5 3 5-4 8-7 5-4 4-10 0-7-5z"/><circle cx="74" cy="62" r="3.5" fill="currentColor" opacity=".9"/><path d="M30 26c-3-5 3-7 0-12M44 22c-3-5 3-7 0-12" opacity=".6"/></g></symbol>
+    <symbol id="a-plate" viewBox="0 0 128 92"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="64" cy="50" r="32"/><circle cx="64" cy="50" r="22" opacity=".55"/><path d="M18 22v20a5 5 0 0 0 10 0V22M23 22v62"/><path d="M106 84V22c-7 4-10 14-10 26h10"/><path d="M55 46c4-6 14-6 18 0M52 56c6 5 18 5 24 0" opacity=".8"/></g></symbol>
+    <symbol id="a-glass" viewBox="0 0 128 92"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M42 18h40l-6 66H48z"/><path d="M45 40h34" opacity=".55"/><circle cx="84" cy="22" r="12"/><path d="M84 10v24M72 22h24M76 14l16 16M92 14 76 30" opacity=".5"/><path d="M70 6 58 70"/><rect x="52" y="50" width="9" height="9" rx="2" opacity=".6"/><rect x="62" y="58" width="9" height="9" rx="2" opacity=".6"/></g></symbol>
+    <symbol id="a-cake" viewBox="0 0 128 92"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 50 92 30v40H24z"/><path d="M24 50v34h68V70"/><path d="M24 62h68" opacity=".55"/><path d="M24 50c8 6 14-2 22 3s14-3 22 1 14-4 24-2" opacity=".8"/><path d="M100 84h-90"/><circle cx="80" cy="24" r="5" fill="currentColor" opacity=".85"/><path d="M80 19c0-5 3-8 7-9"/></g></symbol>
+  </defs>
+</svg>
+
+<div class="shell">
+  <aside class="brand">
+    <div class="topbar">
+      <a class="logo" href="#">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#a8481f"/><path d="M32 12c7 7 7 13 0 20-7-7-7-13 0-20zm0 40c-7-7-7-13 0-20 7 7 7 13 0 20zM12 32c7-7 13-7 20 0-7 7-13 7-20 0zm40 0c-7 7-13 7-20 0 7-7 13-7 20 0z" fill="#f3ebdd"/><circle cx="32" cy="32" r="3" fill="#a8481f"/></svg>
+        <span><b>Pervane</b><small data-i18n="kind">Kahve &amp; Mutfak</small></span>
+      </a>
+      <div class="lang" role="group" aria-label="Dil / Language">
+        <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+    <div class="masthead">
+      <div class="eyebrow" data-i18n="eyebrow">Bugünün menüsü</div>
+      <h1 data-i18n-html="title">Me<em>n</em>ü</h1>
+      <p id="tagline">Sabah kahvesinden akşam sofrasına, mahallenin uzun masası.</p>
+      <div class="facts">
+        <span class="chip"><span class="dot" aria-hidden="true"></span><span id="hours">Her gün 08:00 – 23:00</span></span>
+        <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1.4" fill="currentColor"/></svg><span><span data-i18n="wifi">Wi-Fi</span>: <span id="wifi">pervane-misafir</span></span></span>
+      </div>
+      <div class="table-badge" id="tableBadge" role="status"><b id="tableNo"></b><span data-i18n="tableMsg">Masanızdasınız. Sipariş için garsonumuza el sallamanız yeterli.</span></div>
+    </div>
+
+    <div class="panel-art" aria-hidden="true">
+      <svg viewBox="0 0 400 220"><g fill="none" stroke="#a8481f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 200h380" stroke="#2a1d17"/><path d="M40 200v-60h120v60" stroke="#2a1d17"/><path d="M60 140c0-20 15-34 40-34s40 14 40 34"/><path d="M90 104c-5-8 5-12 0-22M110 104c-5-8 5-12 0-22"/><path d="M200 200v-40c0-12 10-20 26-20h30c16 0 26 8 26 20v40" stroke="#2a1d17"/><path d="M214 140l6-40h42l6 40"/><path d="M241 100V70"/><circle cx="241" cy="60" r="10"/><path d="M310 200l20-90h40l20 90" stroke="#5f6b3a"/><path d="M322 150h56" stroke="#5f6b3a"/><path d="M350 110c-10-30 10-50 30-60-2 26-14 46-30 60z" stroke="#5f6b3a"/></g></svg>
+      <div class="addr"><span id="addr">Kumsal Sokak No: 12, Örnekköy / İzmir</span><br><span id="phone">0555 000 00 00</span></div>
+    </div>
+  </aside>
+
+  <div>
+    <nav class="catnav" aria-label="Menü kategorileri" id="catnavWrap"><ul id="catnav"></ul></nav>
+    <main id="menu" tabindex="-1">
+      <p class="loading" id="loading">Menü yükleniyor…</p>
+    </main>
+    <section class="legend" aria-labelledby="lg">
+      <h2 id="lg" data-i18n="legendTitle">Alerjen rehberi</h2>
+      <ul id="legend"></ul>
+      <p data-i18n="legendNote">Alerjiniz varsa lütfen siparişten önce ekibimize söyleyin. Fiyatlara KDV dahildir.</p>
+    </section>
+    <footer>
+      <div class="cols">
+        <div><strong>Pervane Kahve &amp; Mutfak</strong><span id="addr2">Kumsal Sokak No: 12, Örnekköy / İzmir</span></div>
+        <div><strong data-i18n="contact">İletişim &amp; rezervasyon</strong><a href="tel:+905550000000">0555 000 00 00</a> · @pervane.kahve</div>
+      </div>
+      <p class="demo-note" data-i18n-html="demo">Bu bir demo tasarımdır — Arda Zeybek · İşletme adı ve bilgileri kurgusaldır · <a href="../">Diğer demolar</a></p>
+    </footer>
+  </div>
+</div>
+
+<script>
+(function(){
+  var UI = {
+    tr:{skip:"Menüye geç",kind:"Kahve & Mutfak",eyebrow:"Bugünün menüsü",title:"Me<em>n</em>ü",wifi:"Wi-Fi",
+        tableMsg:"Masanızdasınız. Sipariş için garsonumuza el sallamanız yeterli.",table:"Masa",legendTitle:"Alerjen rehberi",
+        legendNote:"Alerjiniz varsa lütfen siparişten önce ekibimize söyleyin. Fiyatlara KDV dahildir.",contact:"İletişim & rezervasyon",
+        signature:"Ev favorisi",nav:"Menü kategorileri",loading:"Menü yükleniyor…",error:"Menü şu an yüklenemedi. Lütfen sayfayı yenileyin.",
+        demo:'Bu bir demo tasarımdır — Arda Zeybek · İşletme adı ve bilgileri kurgusaldır · <a href="../">Diğer demolar</a>',contains:"İçerir"},
+    en:{skip:"Skip to menu",kind:"Coffee & Kitchen",eyebrow:"Today's menu",title:"Me<em>n</em>u",wifi:"Wi-Fi",
+        tableMsg:"You're all set. Just wave to our staff when you're ready to order.",table:"Table",legendTitle:"Allergen guide",
+        legendNote:"If you have an allergy, please tell our team before ordering. Prices include VAT.",contact:"Contact & bookings",
+        signature:"House favourite",nav:"Menu categories",loading:"Loading menu…",error:"The menu could not be loaded. Please refresh.",
+        demo:'This is a demo design — Arda Zeybek · Business name and details are fictional · <a href="../">More demos</a>',contains:"Contains"}
+  };
+  var data = null, lang = "tr";
+  function store(k,v){try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v);}catch(e){return null}}
+  var qs = new URLSearchParams(location.search);
+  lang = qs.get("lang") || store("pervane-lang") || ((navigator.language||"tr").slice(0,2)==="tr" ? "tr" : "en");
+  if(!UI[lang]) lang = "tr";
+
+  var masa = parseInt(qs.get("masa"),10);
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+  function applyUI(){
+    var t = UI[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){el.textContent = t[el.getAttribute("data-i18n")]});
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){el.innerHTML = t[el.getAttribute("data-i18n-html")]});
+    document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed", b.dataset.lang===lang ? "true":"false")});
+    document.getElementById("catnavWrap").setAttribute("aria-label", t.nav);
+    var ld = document.getElementById("loading"); if(ld) ld.textContent = t.loading;
+    if(masa>0){var b=document.getElementById("tableBadge");b.classList.add("on");document.getElementById("tableNo").textContent=t.table+" "+masa;}
+  }
+
+  function render(){
+    if(!data) return;
+    var t = UI[lang], b = data.business, cur = b.currency;
+    document.getElementById("tagline").textContent = b.tagline[lang];
+    document.getElementById("hours").textContent = b.hours[lang];
+    document.getElementById("wifi").textContent = b.wifi;
+    document.title = "Pervane " + b.kind[lang] + " — " + (lang==="tr"?"Menü":"Menu");
+    var nav = "", html = "";
+    data.categories.forEach(function(c, i){
+      nav += '<li><a href="#'+c.id+'" data-cat="'+c.id+'">'+esc(c.name[lang])+'</a></li>';
+      html += '<section class="cat" id="'+c.id+'" aria-labelledby="h-'+c.id+'"><div class="cat-head"><div><div class="num">'+String(i+1).padStart(2,"0")+' / '+String(data.categories.length).padStart(2,"0")+'</div><h2 id="h-'+c.id+'">'+esc(c.name[lang])+'</h2>'+(c.note?'<p>'+esc(c.note[lang])+'</p>':'')+'</div><svg aria-hidden="true"><use href="#a-'+c.art+'"/></svg></div><ul class="items">';
+      c.items.forEach(function(it){
+        var al = (it.allergens||[]).map(function(a){var n=data.allergens[a]?data.allergens[a][lang]:a;return '<span class="alg '+a+'"><svg aria-hidden="true"><use href="#i-'+a+'"/></svg>'+esc(n)+'</span>'}).join("");
+        var sig = it.tag==="signature" ? '<span class="sig">'+t.signature+'</span>' : "";
+        html += '<li class="item"><div class="row"><h3>'+esc(it.name[lang])+'</h3><span class="leader" aria-hidden="true"></span><span class="price"><small>'+cur+'</small>'+it.price+'</span></div>'+
+                (it.desc?'<p class="desc">'+esc(it.desc[lang])+'</p>':'')+((al||sig)?'<div class="meta">'+sig+(al?'<span class="sr">'+t.contains+': </span>'+al:'')+'</div>':'')+'</li>';
+      });
+      html += '</ul></section>';
+    });
+    document.getElementById("catnav").innerHTML = nav;
+    document.getElementById("menu").innerHTML = html;
+    document.getElementById("legend").innerHTML = Object.keys(data.allergens).map(function(k){return '<li><svg aria-hidden="true"><use href="#i-'+k+'"/></svg>'+esc(data.allergens[k][lang])+'</li>'}).join("");
+    spy();
+  }
+
+  var io;
+  function spy(){
+    if(io) io.disconnect();
+    if(!("IntersectionObserver" in window)) return;
+    var links = {}; document.querySelectorAll("#catnav a").forEach(function(a){links[a.dataset.cat]=a});
+    io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){
+        Object.keys(links).forEach(function(k){links[k].classList.toggle("active", k===e.target.id)});
+        var a = links[e.target.id]; if(a && a.scrollIntoView){ var ul=a.parentNode.parentNode; ul.scrollTo({left:a.offsetLeft-20,behavior:"smooth"}); }
+      }});
+    },{rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll(".cat").forEach(function(s){io.observe(s)});
+  }
+
+  document.querySelectorAll(".lang button").forEach(function(btn){
+    btn.addEventListener("click", function(){ lang = btn.dataset.lang; store("pervane-lang", lang); applyUI(); render(); });
+  });
+
+  applyUI();
+  fetch("menu.json").then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(j){ data = j; render(); })
+    .catch(function(){ document.getElementById("menu").innerHTML = '<p class="loading">'+UI[lang].error+'</p>'; });
+})();
+</script>
+</body>
+</html>

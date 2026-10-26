@@ -1,0 +1,84 @@
+{
+  "business": {
+    "name": "Pervane",
+    "kind": { "tr": "Kahve & Mutfak", "en": "Coffee & Kitchen" },
+    "tagline": {
+      "tr": "Sabah kahvesinden akşam sofrasına, mahallenin uzun masası.",
+      "en": "From morning coffee to evening plates, the long table of the neighbourhood."
+    },
+    "hours": { "tr": "Her gün 08:00 – 23:00", "en": "Daily 08:00 – 23:00" },
+    "address": "Kumsal Sokak No: 12, Örnekköy / İzmir",
+    "phone": "0555 000 00 00",
+    "wifi": "pervane-misafir",
+    "currency": "₺"
+  },
+  "allergens": {
+    "gluten":   { "tr": "Gluten",     "en": "Gluten" },
+    "sut":      { "tr": "Süt ürünü",  "en": "Dairy" },
+    "yumurta":  { "tr": "Yumurta",    "en": "Egg" },
+    "kuruyemis":{ "tr": "Kuruyemiş",  "en": "Nuts" },
+    "vegan":    { "tr": "Vegan",      "en": "Vegan" },
+    "aci":      { "tr": "Acı",        "en": "Spicy" }
+  },
+  "categories": [
+    {
+      "id": "kahve",
+      "art": "cup",
+      "name": { "tr": "Kahveler", "en": "Coffee" },
+      "note": { "tr": "Çekirdeklerimiz her hafta taze kavrulur.", "en": "Our beans are roasted fresh every week." },
+      "items": [
+        { "name": { "tr": "Türk Kahvesi", "en": "Turkish Coffee" }, "desc": { "tr": "Bakır cezvede, yanında lokum ve su.", "en": "Brewed in a copper pot, served with Turkish delight." }, "price": 95, "allergens": [] },
+        { "name": { "tr": "Filtre Kahve", "en": "Filter Coffee" }, "desc": { "tr": "Haftanın tek kökeni, V60 ile.", "en": "Single origin of the week, V60 pour-over." }, "price": 120, "allergens": ["vegan"] },
+        { "name": { "tr": "Flat White", "en": "Flat White" }, "desc": { "tr": "Çift shot espresso, ipeksi süt.", "en": "Double shot espresso, silky milk." }, "price": 145, "allergens": ["sut"] },
+        { "name": { "tr": "Pervane Latte", "en": "Pervane Latte" }, "desc": { "tr": "Ev yapımı tarçın-portakal şurubuyla.", "en": "With our house cinnamon-orange syrup." }, "price": 165, "allergens": ["sut"], "tag": "signature" },
+        { "name": { "tr": "Soğuk Demleme", "en": "Cold Brew" }, "desc": { "tr": "18 saat demlenmiş, buz ve portakal kabuğu.", "en": "Steeped for 18 hours, ice and orange peel." }, "price": 150, "allergens": ["vegan"] }
+      ]
+    },
+    {
+      "id": "kahvalti",
+      "art": "pan",
+      "name": { "tr": "Kahvaltı", "en": "Breakfast" },
+      "note": { "tr": "Hafta içi 08:00–12:00, hafta sonu 14:00'e kadar.", "en": "Weekdays 08:00–12:00, weekends until 14:00." },
+      "items": [
+        { "name": { "tr": "Serpme Kahvaltı (2 kişilik)", "en": "Turkish Breakfast Spread (for 2)" }, "desc": { "tr": "Köy peynirleri, zeytin, bal-kaymak, sıcaklar, sınırsız çay.", "en": "Village cheeses, olives, honey & cream, hot dishes, endless tea." }, "price": 890, "allergens": ["gluten", "sut", "yumurta"], "tag": "signature" },
+        { "name": { "tr": "Menemen", "en": "Menemen" }, "desc": { "tr": "Bahçe domatesi, sivri biber, köy yumurtası.", "en": "Garden tomatoes, green peppers, free-range eggs." }, "price": 220, "allergens": ["yumurta"] },
+        { "name": { "tr": "Çılbır", "en": "Çılbır" }, "desc": { "tr": "Sarımsaklı yoğurt, poşe yumurta, pul biberli tereyağı.", "en": "Garlic yoghurt, poached eggs, chilli butter." }, "price": 240, "allergens": ["sut", "yumurta", "aci"] },
+        { "name": { "tr": "Tereyağlı Kruvasan", "en": "Butter Croissant" }, "desc": { "tr": "Her sabah fırından, yanında reçel.", "en": "Baked every morning, served with jam." }, "price": 140, "allergens": ["gluten", "sut", "yumurta"] }
+      ]
+    },
+    {
+      "id": "mutfak",
+      "art": "plate",
+      "name": { "tr": "Mutfak", "en": "Kitchen" },
+      "note": { "tr": "12:00'den itibaren servis edilir.", "en": "Served from 12:00." },
+      "items": [
+        { "name": { "tr": "Fırın Mantı", "en": "Baked Mantı" }, "desc": { "tr": "Kıtır mantı, sarımsaklı yoğurt, nane-tereyağı.", "en": "Crispy dumplings, garlic yoghurt, mint butter." }, "price": 340, "allergens": ["gluten", "sut"], "tag": "signature" },
+        { "name": { "tr": "Izgara Köfte", "en": "Grilled Köfte" }, "desc": { "tr": "Közlenmiş biber, piyaz ve lavaş ile.", "en": "With charred peppers, bean salad and flatbread." }, "price": 420, "allergens": ["gluten"] },
+        { "name": { "tr": "Mevsim Salatası", "en": "Seasonal Salad" }, "desc": { "tr": "Roka, nar, ceviz, keçi peyniri, nar ekşisi.", "en": "Rocket, pomegranate, walnuts, goat cheese, pomegranate molasses." }, "price": 260, "allergens": ["sut", "kuruyemis"] },
+        { "name": { "tr": "Mercimek Köftesi", "en": "Lentil Köfte" }, "desc": { "tr": "Marul yaprağında, limon ve nar ekşisiyle.", "en": "In lettuce leaves with lemon and pomegranate molasses." }, "price": 210, "allergens": ["gluten", "vegan", "aci"] }
+      ]
+    },
+    {
+      "id": "soguk",
+      "art": "glass",
+      "name": { "tr": "Soğuk İçecekler", "en": "Cold Drinks" },
+      "note": { "tr": "Limonatamız taze sıkılır.", "en": "Our lemonade is freshly squeezed." },
+      "items": [
+        { "name": { "tr": "Ev Limonatası", "en": "House Lemonade" }, "desc": { "tr": "Taze nane ve az şekerle.", "en": "Fresh mint, lightly sweetened." }, "price": 130, "allergens": ["vegan"] },
+        { "name": { "tr": "Ayran", "en": "Ayran" }, "desc": { "tr": "Köpüklü, bakır tasta.", "en": "Frothy, served in a copper cup." }, "price": 70, "allergens": ["sut"] },
+        { "name": { "tr": "Şerbet", "en": "Sherbet" }, "desc": { "tr": "Demirhindi ve karanfilli, eski usul.", "en": "Tamarind and clove, the old way." }, "price": 110, "allergens": ["vegan"] }
+      ]
+    },
+    {
+      "id": "tatli",
+      "art": "cake",
+      "name": { "tr": "Tatlılar", "en": "Desserts" },
+      "note": { "tr": "Hepsi bu sabah mutfağımızda yapıldı.", "en": "All made in our kitchen this morning." },
+      "items": [
+        { "name": { "tr": "San Sebastian", "en": "Basque Cheesecake" }, "desc": { "tr": "Yanık yüzlü, akışkan içli.", "en": "Burnt top, creamy centre." }, "price": 220, "allergens": ["sut", "yumurta"], "tag": "signature" },
+        { "name": { "tr": "Fıstıklı Katmer", "en": "Pistachio Katmer" }, "desc": { "tr": "İnce hamur, kaymak, bol Antep fıstığı.", "en": "Thin pastry, clotted cream, plenty of pistachio." }, "price": 260, "allergens": ["gluten", "sut", "kuruyemis"] },
+        { "name": { "tr": "Mevsim Meyveleri", "en": "Seasonal Fruit" }, "desc": { "tr": "Pazardan gelen ne varsa.", "en": "Whatever came from the market today." }, "price": 150, "allergens": ["vegan"] }
+      ]
+    }
+  ]
+}
