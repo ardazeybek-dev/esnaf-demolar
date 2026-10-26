@@ -6,7 +6,7 @@ Working demo websites for small Turkish businesses (*esnaf*), plus a showcase pa
 
 | Demo | What it shows | Link |
 |---|---|---|
-| Café / restaurant: *Pervane* | QR menu loaded from one JSON file, categories, allergen icons, TR/EN switch, table number from the QR link | [kafe/](https://ardazeybek-dev.github.io/esnaf-demolar/kafe/?masa=4) · [QR card generator](https://ardazeybek-dev.github.io/esnaf-demolar/kafe/qr.html) |
+| Café / restaurant: *Tarçınlı Avlu* | QR menu loaded from one JSON file, categories, allergen icons, TR/EN switch, table number from the QR link | [kafe/](https://ardazeybek-dev.github.io/esnaf-demolar/kafe/?masa=4) · [QR card generator](https://ardazeybek-dev.github.io/esnaf-demolar/kafe/qr.html) |
 | Barber: *Makas & Ustura* | Price list with durations, booking picker that writes a ready WhatsApp message, live open/closed status, static map | [kuafor/](https://ardazeybek-dev.github.io/esnaf-demolar/kuafor/) |
 | Dental clinic: *Mavikum* | Treatments, process, team, FAQ, consent-aware request form (demo, nothing is sent) | [klinik/](https://ardazeybek-dev.github.io/esnaf-demolar/klinik/) |
 | Car wash: *Köpük Garaj* | Packages whose prices change with vehicle type, extras table, before/after slider, WhatsApp | [oto/](https://ardazeybek-dev.github.io/esnaf-demolar/oto/) |
@@ -48,11 +48,11 @@ docs/                 GitHub Pages root
 
 ## Pricing rationale
 
-The showcase lists three one-off packages: **Başlangıç ₺1.500**, **Standart ₺3.500** and **Pro ₺6.500**, plus optional upkeep at ₺750 a year.
+The showcase lists three one-off packages: **Başlangıç ₺350** (intro price for the first 5 orders, ₺1.500 after that), **Standart ₺3.500** and **Pro ₺6.500**, plus optional upkeep at ₺750 a year.
 
 - **Hosting is free, so there is no monthly fee.** Static sites run on GitHub Pages or Cloudflare Pages. For a shop owner, "no rent" is the strongest argument against website-builder subscriptions. The domain is the only recurring cost. Standart and Pro include it for the first year. After that it is billed at the registrar's price with no markup, and Başlangıç ships on a free `*.pages.dev` address.
 - **The anchor is a real sale.** A previous job closed at ₺4.000 after the customer saw a working demo first. Standart sits just under that proven figure. Pro covers the extra work: more pages, a second language, and prices editable from Google Sheets.
-- **The Bionluk gigs stay as the entry point.** The existing listings (one-page site ₺350, custom site ₺400+) are well under the packages here on purpose. With a new profile and no reviews, the low gig gets the first orders and ratings: a single page, the customer supplies all content, a free subdomain, one revision. After 3 to 5 reviews, raise the gig toward Başlangıç. Use the showcase prices when talking to customers outside Bionluk.
+- **The entry price matches the Bionluk gig.** The existing listings (one-page site ₺350, custom site ₺400+) sit far below market on purpose. A new profile with no reviews needs the first orders and ratings, so Başlangıç is offered at ₺350 for the first 5 orders: a single page, the customer supplies the content, a free subdomain and one revision. After that it moves to ₺1.500, which is still at the low end for a one-page business site in Türkiye. Custom requests on the ₺400+ gig get quoted from Standart or Pro.
 - **Upkeep is recurring income.** Menus, prices and hours change every season. ₺750 a year turns one-off customers into a small repeat base without promising unlimited work.
 
 ## Pitfalls

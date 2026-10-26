@@ -3,9 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pervane Kahve &amp; Mutfak — Menü</title>
-<meta name="description" content="Pervane Kahve & Mutfak QR menü: kahveler, kahvaltı, mutfak, soğuk içecekler ve tatlılar. Demo tasarım.">
+<title>Tarçınlı Avlu Kahve &amp; Mutfak — Menü</title>
+<meta name="description" content="Tarçınlı Avlu Kahve & Mutfak QR menü: kahveler, kahvaltı, mutfak, soğuk içecekler ve tatlılar. Demo tasarım.">
 <meta name="theme-color" content="#f3ebdd">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ardazeybek-dev.github.io/esnaf-demolar/kafe/">
+<meta property="og:title" content="Tarçınlı Avlu Kahve &amp; Mutfak — Menü">
+<meta property="og:description" content="Tarçınlı Avlu Kahve & Mutfak QR menü: kahveler, kahvaltı, mutfak, soğuk içecekler ve tatlılar. Demo tasarım.">
+<meta property="og:image" content="https://ardazeybek-dev.github.io/esnaf-demolar/assets/og/kafe.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23b4532a'/%3E%3Cpath d='M32 14c6 6 6 12 0 18-6-6-6-12 0-18zm0 36c-6-6-6-12 0-18 6 6 6 12 0 18zM14 32c6-6 12-6 18 0-6 6-12 6-18 0zm36 0c-6 6-12 6-18 0 6-6 12-6 18 0z' fill='%23f3ebdd'/%3E%3C/svg%3E">
 <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="menu.json" as="fetch" crossorigin>
@@ -142,7 +151,7 @@ footer strong{display:block;color:var(--ink);font:600 16px/1.3 var(--serif);marg
     <div class="topbar">
       <a class="logo" href="#">
         <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#a8481f"/><path d="M32 12c7 7 7 13 0 20-7-7-7-13 0-20zm0 40c-7-7-7-13 0-20 7 7 7 13 0 20zM12 32c7-7 13-7 20 0-7 7-13 7-20 0zm40 0c-7 7-13 7-20 0 7-7 13-7 20 0z" fill="#f3ebdd"/><circle cx="32" cy="32" r="3" fill="#a8481f"/></svg>
-        <span><b>Pervane</b><small data-i18n="kind">Kahve &amp; Mutfak</small></span>
+        <span><b>Tarçınlı Avlu</b><small data-i18n="kind">Kahve &amp; Mutfak</small></span>
       </a>
       <div class="lang" role="group" aria-label="Dil / Language">
         <button type="button" data-lang="tr" aria-pressed="true">TR</button>
@@ -156,7 +165,7 @@ footer strong{display:block;color:var(--ink);font:600 16px/1.3 var(--serif);marg
       <p id="tagline">Sabah kahvesinden akşam sofrasına, mahallenin uzun masası.</p>
       <div class="facts">
         <span class="chip"><span class="dot" aria-hidden="true"></span><span id="hours">Her gün 08:00 – 23:00</span></span>
-        <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1.4" fill="currentColor"/></svg><span><span data-i18n="wifi">Wi-Fi</span>: <span id="wifi">pervane-misafir</span></span></span>
+        <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1.4" fill="currentColor"/></svg><span><span data-i18n="wifi">Wi-Fi</span>: <span id="wifi">avlu-misafir</span></span></span>
       </div>
       <div class="table-badge" id="tableBadge" role="status"><b id="tableNo"></b><span data-i18n="tableMsg">Masanızdasınız. Sipariş için garsonumuza el sallamanız yeterli.</span></div>
     </div>
@@ -179,8 +188,8 @@ footer strong{display:block;color:var(--ink);font:600 16px/1.3 var(--serif);marg
     </section>
     <footer>
       <div class="cols">
-        <div><strong>Pervane Kahve &amp; Mutfak</strong><span id="addr2">Kumsal Sokak No: 12, Örnekköy / İzmir</span></div>
-        <div><strong data-i18n="contact">İletişim &amp; rezervasyon</strong><a href="tel:+905550000000">0555 000 00 00</a> · @pervane.kahve</div>
+        <div><strong>Tarçınlı Avlu Kahve &amp; Mutfak</strong><span id="addr2">Kumsal Sokak No: 12, Örnekköy / İzmir</span></div>
+        <div><strong data-i18n="contact">İletişim &amp; rezervasyon</strong><a href="tel:+905550000000">0555 000 00 00</a> · @tarcinliavlu</div>
       </div>
       <p class="demo-note" data-i18n-html="demo">Bu bir demo tasarımdır — Arda Zeybek · İşletme adı ve bilgileri kurgusaldır · <a href="../">Diğer demolar</a></p>
     </footer>
@@ -204,7 +213,7 @@ footer strong{display:block;color:var(--ink);font:600 16px/1.3 var(--serif);marg
   var data = null, lang = "tr";
   function store(k,v){try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v);}catch(e){return null}}
   var qs = new URLSearchParams(location.search);
-  lang = qs.get("lang") || store("pervane-lang") || ((navigator.language||"tr").slice(0,2)==="tr" ? "tr" : "en");
+  lang = qs.get("lang") || store("avlu-lang") || ((navigator.language||"tr").slice(0,2)==="tr" ? "tr" : "en");
   if(!UI[lang]) lang = "tr";
 
   var masa = parseInt(qs.get("masa"),10);
@@ -227,7 +236,7 @@ footer strong{display:block;color:var(--ink);font:600 16px/1.3 var(--serif);marg
     document.getElementById("tagline").textContent = b.tagline[lang];
     document.getElementById("hours").textContent = b.hours[lang];
     document.getElementById("wifi").textContent = b.wifi;
-    document.title = "Pervane " + b.kind[lang] + " — " + (lang==="tr"?"Menü":"Menu");
+    document.title = "Tarçınlı Avlu " + b.kind[lang] + " — " + (lang==="tr"?"Menü":"Menu");
     var nav = "", html = "";
     data.categories.forEach(function(c, i){
       nav += '<li><a href="#'+c.id+'" data-cat="'+c.id+'">'+esc(c.name[lang])+'</a></li>';
@@ -261,7 +270,7 @@ footer strong{display:block;color:var(--ink);font:600 16px/1.3 var(--serif);marg
   }
 
   document.querySelectorAll(".lang button").forEach(function(btn){
-    btn.addEventListener("click", function(){ lang = btn.dataset.lang; store("pervane-lang", lang); applyUI(); render(); });
+    btn.addEventListener("click", function(){ lang = btn.dataset.lang; store("avlu-lang", lang); applyUI(); render(); });
   });
 
   applyUI();

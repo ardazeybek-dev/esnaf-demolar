@@ -1,6 +1,6 @@
 {
   "business": {
-    "name": "Pervane",
+    "name": "Tarçınlı Avlu",
     "kind": { "tr": "Kahve & Mutfak", "en": "Coffee & Kitchen" },
     "tagline": {
       "tr": "Sabah kahvesinden akşam sofrasına, mahallenin uzun masası.",
@@ -9,7 +9,7 @@
     "hours": { "tr": "Her gün 08:00 – 23:00", "en": "Daily 08:00 – 23:00" },
     "address": "Kumsal Sokak No: 12, Örnekköy / İzmir",
     "phone": "0555 000 00 00",
-    "wifi": "pervane-misafir",
+    "wifi": "avlu-misafir",
     "currency": "₺"
   },
   "allergens": {
@@ -30,7 +30,7 @@
         { "name": { "tr": "Türk Kahvesi", "en": "Turkish Coffee" }, "desc": { "tr": "Bakır cezvede, yanında lokum ve su.", "en": "Brewed in a copper pot, served with Turkish delight." }, "price": 95, "allergens": [] },
         { "name": { "tr": "Filtre Kahve", "en": "Filter Coffee" }, "desc": { "tr": "Haftanın tek kökeni, V60 ile.", "en": "Single origin of the week, V60 pour-over." }, "price": 120, "allergens": ["vegan"] },
         { "name": { "tr": "Flat White", "en": "Flat White" }, "desc": { "tr": "Çift shot espresso, ipeksi süt.", "en": "Double shot espresso, silky milk." }, "price": 145, "allergens": ["sut"] },
-        { "name": { "tr": "Pervane Latte", "en": "Pervane Latte" }, "desc": { "tr": "Ev yapımı tarçın-portakal şurubuyla.", "en": "With our house cinnamon-orange syrup." }, "price": 165, "allergens": ["sut"], "tag": "signature" },
+        { "name": { "tr": "Avlu Latte", "en": "Avlu Latte" }, "desc": { "tr": "Ev yapımı tarçın-portakal şurubuyla.", "en": "With our house cinnamon-orange syrup." }, "price": 165, "allergens": ["sut"], "tag": "signature" },
         { "name": { "tr": "Soğuk Demleme", "en": "Cold Brew" }, "desc": { "tr": "18 saat demlenmiş, buz ve portakal kabuğu.", "en": "Steeped for 18 hours, ice and orange peel." }, "price": 150, "allergens": ["vegan"] }
       ]
     },
